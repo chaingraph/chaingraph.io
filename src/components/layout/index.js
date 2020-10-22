@@ -5,8 +5,6 @@ import { ThemeProvider, theme as global_theme } from "util/styles"
 import GlobalStyles from "util/styles/GlobalStyles"
 import { Header } from "components/UI"
 
-const THEME = localStorage.getItem('theme')
-
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -17,17 +15,18 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const [theme, setTheme] = useState(THEME ?? 'light')
+  const [theme, setTheme] = useState('light')
 
   useEffect(() => {
+    const THEME = localStorage.getItem('theme')
     const { matchMedia } = window 
 
     if ((matchMedia('(prefers-color-scheme: dark)'))) {
-      if (!theme) localStorage.setItem('theme', 'dark')
+      if (!THEME) localStorage.setItem('theme', 'dark')
 
       setTheme(theme ?? 'dark');
     } else {
-      if (!theme) localStorage.setItem('theme', 'light')
+      if (!THEME) localStorage.setItem('theme', 'light')
 
       setTheme(theme ?? 'light')
     }
