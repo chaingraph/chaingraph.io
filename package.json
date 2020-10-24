@@ -26,6 +26,7 @@
     "react-ga": "^3.2.0",
     "react-helmet": "^6.0.0",
     "react-icons": "^3.11.0",
+    "react-svg": "^11.0.44",
     "rebass": "^4.0.7",
     "styled-components": "^5.2.0",
     "styled-system": "^5.1.5",
@@ -39,7 +40,8 @@
     "graphql",
     "blockchain",
     "chaingraph",
-    "blockmatic"
+    "blockmatic",
+    "react"
   ],
   "license": "MIT",
   "scripts": {
@@ -53,9 +55,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/chaingraph/chaingraph.io"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/chaingraph/chaingraph.io/issues"
   }
 }
