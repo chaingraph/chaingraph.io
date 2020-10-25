@@ -14,6 +14,13 @@ module.exports = {
     //     path: `${__dirname}/content/blog`,
     //   },
     // },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: false,
+        pure: true
+      },
+    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
