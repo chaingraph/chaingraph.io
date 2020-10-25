@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import { ThemeProvider, theme as global_theme } from "util/styles"
-import GlobalStyles from "util/styles/GlobalStyles"
-import { Header } from "components/UI"
+import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
+import { ThemeProvider, theme as global_theme } from 'util/styles'
+import GlobalStyles from 'util/styles/GlobalStyles'
+import { Header, Footer } from 'components/UI'
+import { Box, Flex, Text } from 'rebass'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,42 +20,30 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     const THEME = localStorage.getItem('theme')
-    const { matchMedia } = window 
+    const { matchMedia } = window
 
     if ((matchMedia('(prefers-color-scheme: dark)'))) {
       if (!THEME) localStorage.setItem('theme', 'dark')
 
-      setTheme(theme ?? 'dark');
+      setTheme(THEME ?? 'dark');
     } else {
       if (!THEME) localStorage.setItem('theme', 'light')
 
-      setTheme(theme ?? 'light')
+      setTheme(THEME ?? 'light')
     }
   })
 
   return (
     <ThemeProvider theme={global_theme}>
       <GlobalStyles userTheme={theme} />
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 1280,
-            padding: `0 1.0875rem 1.45rem`,
-          }}
-        >
-          <main>
-            {children}
-            <b>Your browser has {theme} theme active.</b>
-          </main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </div>
-      </>
+      <Header userTheme={theme} />
+      <Box mt={6}>
+        <Box as="main" maxWidth="1600px" mx="auto" px={3}>
+          {children}
+          <b>Your browser has {theme} theme active.</b>
+        </Box>
+        <Footer userTheme={theme} />
+      </Box> 
     </ThemeProvider>
   )
 }
