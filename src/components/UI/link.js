@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from 'util/styles'
+import styled from 'utils/styles'
 import { motion, useAnimation } from 'framer-motion'
 import { Link } from 'gatsby'
 import { Text } from 'rebass'

@@ -25,7 +25,7 @@ import {
 } from 'react-icons/fi'
 import { Flex, Box } from 'rebass'
 import { motion } from 'framer-motion'
-import styled, { themeGet } from 'util/styles'
+import styled, { themeGet } from 'utils/styles'
 import { ReactSVG } from 'react-svg'
 
 const SocialLink = styled(motion.a)`

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Box, Flex, Text } from "rebass"
-import styled from 'util/styles'
+import styled from 'utils/styles'
 import { SvgIcon, Link } from './index'
 
 const HeaderComponent = styled(Flex)`
