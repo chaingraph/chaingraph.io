@@ -160,7 +160,7 @@ const GlobalStyles = createGlobalStyle`
   [type="reset"]:-moz-focusring,
   [type="submit"]:-moz-focusring,
   button:-moz-focusring {
-    outline: 1px dotted ButtonText;
+    outline: -webkit-focus-ring-color blue 3px;
   }
   fieldset {
     border: 1px solid silver;

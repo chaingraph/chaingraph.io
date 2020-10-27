@@ -5,8 +5,8 @@ import { ThemeProvider, theme as global_theme } from 'utils/styles'
 import GlobalStyles from 'utils/styles/GlobalStyles'
 import { Header, Footer } from 'components/UI'
 import { Box, Flex, Text } from 'rebass'
-import { GlobalContainer } from 'components/state/store'
-import { globalState } from 'components/state/reducer/global-actions'
+import { GlobalContainer } from 'store'
+import { globalState } from 'store/reducer/global-actions'
 
 const Layout = ({ children }) => {
   const { mobile, mobileStateHandler, g_error, g_loading, userThemeHandler, user_theme } = GlobalContainer.useContainer()

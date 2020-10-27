@@ -10,36 +10,70 @@ const colors = {
     100: '#ffffff',
     200: '#000000'
   },
-  black: {
-    100: '#414141',
-    200: '#303030',
-    300: '#232323',
-    400: '#121212',
-    500: '#010101'
+  main: {
+    background: {
+      default: '#fff',
+      light: '#fff',
+      dark: '#151325'
+    },
+    primary: {
+      100: '#003A65',
+      200: '#960088',
+      300: '#009085'
+    },
+    secondary: {
+      100: '#ffffff',
+      200: '#000000'
+    },
+    black: {
+      100: '#414141',
+      200: '#303030',
+      300: '#232323',
+      400: '#121212',
+      500: '#010101'
+    },
   },
-  error: {
-    100: '#ffcdd2',
-    200: '#ef9a9a',
-    300: '#e57373',
-    700: '#d32f2f',
-    800: '#c62828',
-    900: '#b71c1c',
+  cards: {
+    light: {
+      default: '#0E144A',
+      active: '#2CD5C4',
+      color: '#fff',
+    },
+    dark: {
+      default: 'linear-gradient(180deg, #524F67 0%, rgba(70, 68, 87, 0) 100%)',
+      active: 'linear-gradient(180deg, #2CD5C4 0%, rgba(70, 68, 87, 0) 100%)',
+      color: '#fff'
+    }
   },
-  warning: {
-    100: '#fff9c4',
-    200: '#fff59d',
-    300: '#fff176',
-    700: '#fbc02d',
-    800: '#f9a825',
-    900: '#f57f17',
+  buttons: {
+    primary: {
+      default: '#2CD5C4',
+      light: '',
+      dark: ''
+    },
+    secondary: {
+      default: '#2CD5C4',
+      light: '',
+      dark: ''
+    },
   },
-  success: {
-    100: '#c8e6c9',
-    200: '#a5d6a7',
-    300: '#81c784',
-    700: '#388e3c',
-    800: '#2e7d32',
-    900: '#1b5e20',
+  input: {
+    error: '#F41',
+    background: {
+      default: '',
+      light: '#333145',
+      dark: '#333145'
+    },
+    success: {
+      default: '#388e3c',
+      light: '',
+      dark: ''
+    },
+    warning: {
+      default: '#fff176',
+      light: '',
+      dark: ''
+    }
   },
 };
 
