@@ -1,17 +1,9 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { Box, Flex, Text } from "rebass"
+import { Flex } from "rebass"
+import { GlobalContainer } from "store"
 import styled from 'utils/styles'
-import { SvgIcon, Link } from './index'
-
-const HeaderComponent = styled(Flex)`
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1500;
-  background-color: ${({ userTheme }) => userTheme === 'light' ? '#fff' : '#151325'};
-`
+import { SvgIcon, Link, HeaderComponent, HeaderLogoContainer } from './index'
 
 const LinkCircle = styled.div`
   position: relative;
@@ -34,48 +26,55 @@ const LinkCircle = styled.div`
   }
 `
 
-const Header = ({ userTheme }) => (
-  <HeaderComponent as="header" userTheme={userTheme}>
-    <Flex
-      justifyContent="space-between"
-      alignItems="center"
-      maxWidth="1600px"
-      width={1}
-      p={3}
-      mx="auto"
-    >
+const Header = () => {
+  const { height, scroll, user_theme } = GlobalContainer.useContainer()
+
+  return (
+    <HeaderComponent as="header" userTheme={user_theme} hide={height >= 108} scroll={height >= 108 && scroll}>
       <Flex
+        justifyContent="space-between"
         alignItems="center"
-        mr="auto"
+        maxWidth="1600px"
+        height="108px"
+        width={1}
+        p={3}
+        mx="auto"
       >
-        <Link to="/" logo>
-          <SvgIcon icon={`chaingraph_logo-${userTheme === 'light' ? 'l' : 'd'}`} size={[76, 76, 76, 76]} />
-        </Link>
-        <Link header
-          fontSize={4}
-          ml={5}
+        <Flex
+          alignItems="center"
+          mr="auto"
         >
-          Beta
-        </Link>
-        <Link to="/#features" header
-          fontSize={4}
-          ml={5}
-        >
-          Features
-        </Link>
+          <Link to="/" logo>
+            <HeaderLogoContainer>
+              <SvgIcon icon={`chaingraph_logo-${user_theme === 'light' ? 'l' : 'd'}`} size={[76, 76, 76, 76]} />
+            </HeaderLogoContainer>
+          </Link>
+          <Link header
+            fontSize={4}
+            ml={5}
+          >
+            Beta
+          </Link>
+          <Link to="/#features" header
+            fontSize={4}
+            ml={5}
+          >
+            Features
+          </Link>
+        </Flex>
+        <LinkCircle userTheme={user_theme}>
+          <div className="circle" />
+          <Link header
+            fontSize={4}
+            ml={5}
+          >
+            Join github
+          </Link>
+        </LinkCircle>
       </Flex>
-      <LinkCircle userTheme={userTheme}>
-        <div className="circle" />
-        <Link header
-          fontSize={4}
-          ml={5}
-        >
-          Join github
-        </Link>
-      </LinkCircle>
-    </Flex>
-  </HeaderComponent>
-)
+    </HeaderComponent>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

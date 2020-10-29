@@ -29,10 +29,31 @@ function setUserTheme(theme) {
   }
 }
 
-function mobileState(state = false) {
+function mobileState(mobile = false) {
   return {
     type: at.MOBILE_STATE,
-    mobile: state
+    mobile
+  }
+}
+
+function scrollState(scroll = false) {
+  return {
+    type: at.SCROLL_STATE,
+    scroll
+  }
+}
+
+function scrollHeight(height) {
+  return {
+    type: at.SET_HEIGHT,
+    height
+  }
+}
+
+function scrollYOffset(yOffset) {
+  return {
+    type: at.SET_YOFFSET,
+    yOffset
   }
 }
 
@@ -41,5 +62,8 @@ export {
   globalFail,
   getUserTheme,
   setUserTheme,
-  mobileState
+  mobileState,
+  scrollState,
+  scrollHeight,
+  scrollYOffset,
 }

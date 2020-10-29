@@ -7,9 +7,9 @@ const HomeComponent = () => {
 
   function changeThemeHandler() {
     if (user_theme === 'light')
-      setUserThemeHandler('dark', true)
+      setUserThemeHandler('dark', false)
     else
-      setUserThemeHandler('light', true)
+      setUserThemeHandler('light', false)
   }
 
   return (

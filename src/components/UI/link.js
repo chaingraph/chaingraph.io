@@ -30,7 +30,7 @@ const LinkWrapper = styled(Link)`
 `
 
 const LinkComponent = ({ children, logo = false, header = false, to = '#', ...rest }) => {
-  const { userTheme } = GlobalContainer.useContainer()
+  const { user_theme } = GlobalContainer.useContainer()
   const [active, setActive] = useState(false)
   const revealX = useAnimation()
 
@@ -72,7 +72,7 @@ const LinkComponent = ({ children, logo = false, header = false, to = '#', ...re
           }}
           to={to}
           getProps={({ isCurrent }) => isCurrent && setActive(isCurrent && header)}
-          usertheme={userTheme}
+          usertheme={user_theme}
         >
           { children }
         </LinkWrapper>

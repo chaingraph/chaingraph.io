@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { ThemeProvider, theme as global_theme } from 'utils/styles'
 import GlobalStyles from 'utils/styles/GlobalStyles'
 import { Header, Footer } from 'components/UI'
-import { Box, Flex, Text } from 'rebass'
+import { Box } from 'rebass'
 import { GlobalContainer } from 'store'
 import { globalState } from 'store/reducer/global-actions'
 
 const Layout = ({ children }) => {
-  const { mobile, mobileStateHandler, g_error, g_loading, userThemeHandler, user_theme } = GlobalContainer.useContainer()
+  const { user_theme } = GlobalContainer.useContainer()
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={global_theme}>
       <GlobalStyles userTheme={user_theme} />
-      <Header userTheme={user_theme} />
+      <Header />
       <Box mt={6}>
         <Box as="main" maxWidth="1600px" mx="auto" px={3}>
           {children}

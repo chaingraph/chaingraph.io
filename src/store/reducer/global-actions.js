@@ -7,6 +7,9 @@ const initState = {
   mobile: false,
   error: null,
   loading: false,
+  scroll: false,
+  yOffset: 0,
+  height: 0,
 }
 
 const start = (state, action) =>
@@ -43,6 +46,21 @@ const mobileState = (state, { mobile }) =>
     mobile
   })
 
+const scrollState = (state, { scroll }) =>
+  updateObject(state, {
+    scroll
+  })
+
+const scrollHeight = (state, { height }) =>
+  updateObject(state, {
+    height
+  })
+
+const scrollYOffset = (state, { yOffset }) =>
+  updateObject(state, {
+    yOffset
+  })
+
 const reducer = (state = initState, action) => {
   switch (action.type) {
     case at.GLOBAL_STATE_START:
@@ -55,6 +73,14 @@ const reducer = (state = initState, action) => {
       return setUserTheme(state, action)
     case at.MOBILE_STATE:
       return mobileState(state, action)
+    case at.SCROLL_STATE:
+      return scrollState(state, action)
+    case at.SET_HEIGHT:
+      return scrollHeight(state, action)
+    case at.SET_YOFFSET:
+      return scrollYOffset(state, action)
+    default:
+      return state
   }
 }
 

@@ -22,6 +22,7 @@ import {
   FiMoreHorizontal,
   FiCopy,
   FiAtSign,
+  FiMenu,
 } from 'react-icons/fi'
 import { Flex, Box } from 'rebass'
 import { motion } from 'framer-motion'
@@ -104,7 +105,8 @@ export const Icon = {
   search: props => <AiOutlineSearch {...props} />,
   more: props => <FiMoreHorizontal {...props} />,
   copy: props => <FiCopy {...props} />,
-  github: props => <FaGithub {...props} />
+  github: props => <FaGithub {...props} />,
+  menu: props => <FiMenu {...props} />,
 }
 
 export const SvgIcon = ({ icon, size, color }) => (
