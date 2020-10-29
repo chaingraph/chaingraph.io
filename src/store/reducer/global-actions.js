@@ -1,8 +1,9 @@
+import Cookies from 'universal-cookie'
 import { updateObject } from 'utils/utility'
 import * as at from '../actions/action-types'
 
 const initState = {
-  user_theme: 'light',
+  user_theme: null,
   mobile: false,
   error: null,
   loading: false,
@@ -20,8 +21,9 @@ const fail = (state, { error }) =>
     loading: false,
   })
 
-const getUserTheme = (state) => {
-  const user_theme = localStorage.getItem('theme')
+const getUserTheme = (state, action) => {
+  const cookies = new Cookies()
+  const user_theme = cookies.get('theme', { path: '/' })
   return updateObject(state, {
     error: null,
     loading: false,

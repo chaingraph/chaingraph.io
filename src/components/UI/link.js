@@ -3,6 +3,7 @@ import styled from 'utils/styles'
 import { motion, useAnimation } from 'framer-motion'
 import { Link } from 'gatsby'
 import { Text } from 'rebass'
+import { GlobalContainer } from 'store'
 
 const LinkWrapper = styled(Link)`
   text-decoration: none;
@@ -13,7 +14,7 @@ const LinkWrapper = styled(Link)`
   }
 
   + div {
-    background-color: ${({ userTheme }) => userTheme === 'light' ? `#111` : `#fafafa`};
+    background-color: ${({ usertheme }) => usertheme === 'light' ? `#111` : `#fafafa`};
     height: 2px;
     width: 0%;
     opacity: 0;
@@ -28,7 +29,8 @@ const LinkWrapper = styled(Link)`
   }
 `
 
-const LinkComponent = ({ userTheme, children, logo = false, header = false, to = '#', ...rest }) => {
+const LinkComponent = ({ children, logo = false, header = false, to = '#', ...rest }) => {
+  const { userTheme } = GlobalContainer.useContainer()
   const [active, setActive] = useState(false)
   const revealX = useAnimation()
 
@@ -70,14 +72,13 @@ const LinkComponent = ({ userTheme, children, logo = false, header = false, to =
           }}
           to={to}
           getProps={({ isCurrent }) => isCurrent && setActive(isCurrent && header)}
-          userTheme={userTheme}
+          usertheme={userTheme}
         >
           { children }
         </LinkWrapper>
         {
           (header || active) && (
             <motion.div
-              userTheme={userTheme}
               animate={!active && revealX}
               initial={active && {
                 opacity: 1,

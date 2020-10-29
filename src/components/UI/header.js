@@ -52,14 +52,12 @@ const Header = ({ userTheme }) => (
           <SvgIcon icon={`chaingraph_logo-${userTheme === 'light' ? 'l' : 'd'}`} size={[76, 76, 76, 76]} />
         </Link>
         <Link header
-          userTheme={userTheme}
           fontSize={4}
           ml={5}
         >
           Beta
         </Link>
         <Link to="/#features" header
-          userTheme={userTheme}
           fontSize={4}
           ml={5}
         >
@@ -69,7 +67,6 @@ const Header = ({ userTheme }) => (
       <LinkCircle userTheme={userTheme}>
         <div className="circle" />
         <Link header
-          userTheme={userTheme}
           fontSize={4}
           ml={5}
         >

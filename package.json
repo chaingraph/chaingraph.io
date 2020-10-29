@@ -32,6 +32,7 @@
     "rebass": "^4.0.7",
     "styled-components": "^5.2.0",
     "styled-system": "^5.1.5",
+    "universal-cookie": "^4.0.4",
     "unstated-next": "^1.1.0"
   },
   "devDependencies": {

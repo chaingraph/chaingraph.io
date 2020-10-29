@@ -1,3 +1,4 @@
+import Cookies from 'universal-cookie'
 import * as at from './action-types'
 
 function globalStart() {
@@ -19,8 +20,9 @@ function getUserTheme() {
 }
 
 function setUserTheme(theme) {
+  const cookies = new Cookies()
   const user_theme = theme
-  localStorage.setItem('theme', theme)
+  cookies.set('theme', theme, { path: '/' })
   return {
     type: at.GET_USER_THEME,
     user_theme

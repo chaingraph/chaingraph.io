@@ -48,7 +48,7 @@ const useGlobalStore = () => {
     active_debug && debug(at.GET_USER_THEME, { user_theme, value: user_theme })
     
     dispatch(getUserTheme())
-
+    
     if (!user_theme) {
       const isDark = matchMedia('(prefers-color-scheme: dark)')
       active_debug && debug(at.SET_USER_THEME, { user_theme, value: isDark ? 'dark' : 'light' })
