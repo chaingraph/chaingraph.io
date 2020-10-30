@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import styled from 'utils/styles'
+import styled, { themeGet } from 'utils/styles'
 import { motion, useAnimation } from 'framer-motion'
 import { Link } from 'gatsby'
 import { Text } from 'rebass'
 import { GlobalContainer } from 'store'
 
-const LinkWrapper = styled(Link)`
+const LinkContainer = styled(Link)`
   text-decoration: none;
   color: inherit;
 
@@ -21,15 +21,23 @@ const LinkWrapper = styled(Link)`
     float: left;
     left: 0;
     position: absolute;
-    display: none;
+    display: ${({ mobile }) => mobile ? 'block' : 'none'};
 
-    @media screen and (min-width: 640px) {
+    @media screen and (min-width: ${themeGet('breakpoints.0')}) {
       display: block;
     }
   }
 `
 
-const LinkComponent = ({ children, logo = false, header = false, to = '#', ...rest }) => {
+const LinkWrapper = styled(motion.div)`
+  display: ${({ mobile }) => mobile ? 'initial' : 'none'};
+
+  @media screen and (min-width: ${themeGet('breakpoints.0')}) {
+    display: ${({ mobile }) => !mobile ? 'initial' : 'none'}
+  }
+`
+
+const LinkComponent = ({ children, mobile = false, logo = false, header = false, to = '#', ...rest }) => {
   const { user_theme } = GlobalContainer.useContainer()
   const [active, setActive] = useState(false)
   const revealX = useAnimation()
@@ -58,24 +66,26 @@ const LinkComponent = ({ children, logo = false, header = false, to = '#', ...re
   }
 
   return !logo ? (
-    <motion.div 
+    <LinkWrapper
       onHoverStart={() => revealXAnim('open')}
       onHoverEnd={() => revealXAnim('close')}
+      mobile={mobile}
     >
       <Text as={header ? 'b' : 'span'}
         style={{ position: 'relative' }}
         {...rest}
       >
-        <LinkWrapper
+        <LinkContainer
           activeStyle={{
             opacity: 0.833
           }}
           to={to}
           getProps={({ isCurrent }) => isCurrent && setActive(isCurrent && header)}
           usertheme={user_theme}
+          mobile={mobile}
         >
           { children }
-        </LinkWrapper>
+        </LinkContainer>
         {
           (header || active) && (
             <motion.div
@@ -88,7 +98,7 @@ const LinkComponent = ({ children, logo = false, header = false, to = '#', ...re
           )
         }
       </Text>
-    </motion.div>
+    </LinkWrapper>
   ) : (
     <Link to={to}>
       { children }

@@ -44,8 +44,8 @@ const SvgIconContainer = styled(Box)`
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: ${({ size }) => size[0]}px;
-  height: ${({ size }) => size[0]}px;
+  width: ${({ size }) => size ? `${size[0]}px` : '100%'};
+  height: ${({ size }) => size ? `${size[0]}px` : '100%'};
   display: inline-block;
 
   svg, path {
@@ -57,18 +57,18 @@ const SvgIconContainer = styled(Box)`
   }
 
   @media screen and (min-width: ${themeGet('breakpoints.0')}) {
-    width: ${({ size }) => size[1]}px;
-    height: ${({ size }) => size[1]}px;
+    width: ${({ size }) => size ? `${size[1]}px` : '100%'};
+    height: ${({ size }) => size ? `${size[1]}px` : '100%'};
   }
 
   @media screen and (min-width: ${themeGet('breakpoints.1')}) {
-    width: ${({ size }) => size[2]}px;
-    height: ${({ size }) => size[2]}px;
+    width: ${({ size }) => size ? `${size[2]}px` : '100%'};
+    height: ${({ size }) => size ? `${size[2]}px` : '100%'};
   }
 
   @media screen and (min-width: ${themeGet('breakpoints.2')}) {
-    width: ${({ size }) => size[2]}px;
-    height: ${({ size }) => size[2]}px;
+    width: ${({ size }) => size ? `${size[2]}px` : '100%'};
+    height: ${({ size }) => size ? `${size[2]}px` : '100%'};
   }
 `
 
