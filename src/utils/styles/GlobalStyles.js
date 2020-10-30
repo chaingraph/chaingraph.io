@@ -6,6 +6,25 @@ const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box;
   }
+  ::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background: ${({ userTheme }) => userTheme === 'light' ? '#fff' : '#151325'}; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ userTheme }) => userTheme === 'light' ? '#2CD5C4' : '#911C81'};
+    border-radius: 25px;
+    border: 3px solid ${({ userTheme }) => userTheme === 'light' ? '#fff' : '#151325'};
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${({ userTheme }) => userTheme === 'light' ? '#fff' : '#151325'}; 
+  }
   html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;

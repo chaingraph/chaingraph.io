@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Text, Flex, Box, Image } from 'rebass'
 import { GlobalContainer } from 'store'
 import { SvgIcon } from './icon'
 
-const Footer = ({ userTheme }) => {
-  const { mobile } = GlobalContainer.useContainer()
+const Footer = () => {
+  const { mobile, user_theme } = GlobalContainer.useContainer()
 
   return (
     <Box as="footer" width={1} p={3}>
@@ -18,9 +18,9 @@ const Footer = ({ userTheme }) => {
         <Box as="figure" maxWidth="820px">
         {
           mobile ?
-            <SvgIcon icon={`chaingraph_logo-${userTheme === 'light' ? 'l' : 'd'}-footer-m`} />
+            <SvgIcon icon={`chaingraph_logo-${user_theme === 'light' ? 'l' : 'd'}-footer-m`} />
           :
-            <Image src={`/images/chaingraph_logo_big-${userTheme === 'light' ? 'l' : 'd'}.png`} width={1} alt="chainGraph_logo_footer" />
+            <Image src={`/images/chaingraph_logo_big-${user_theme === 'light' ? 'l' : 'd'}.png`} width={1} alt="chainGraph_logo_footer" />
         }
         </Box>
         <Text as="span"

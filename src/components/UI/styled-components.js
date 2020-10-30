@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { getColors } from 'utils/utility'
 
 const HeaderComponent = styled(Flex)`
-  background-color: ${({ userTheme }) => userTheme === 'light' ? '#fff' : '#151325'};
+  background-color: ${({ userTheme, hide }) => !hide ? 'transparent' : userTheme === 'light' ? '#fff' : '#151325'};
   position: sticky;
   transform: ${({ scroll, hide }) => scroll === true || !hide  ? 'translateY(0px)' : 'translateY(-109px)'};
   transition: transform 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86) 50ms;

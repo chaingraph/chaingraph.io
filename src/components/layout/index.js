@@ -10,15 +10,6 @@ import { globalState } from 'store/reducer/global-actions'
 
 const Layout = ({ children }) => {
   const { user_theme } = GlobalContainer.useContainer()
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
   const [mobMenu, setMobMenu] = useState(false)
   const htmlRef = useRef(null)
 
