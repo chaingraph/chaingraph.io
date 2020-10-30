@@ -2,8 +2,10 @@ import Cookies from 'universal-cookie'
 import { updateObject } from 'utils/utility'
 import * as at from '../actions/action-types'
 
+const cookies = new Cookies()
+
 const initState = {
-  user_theme: null,
+  user_theme: cookies.get('theme', { path: '/' }),
   mobile: false,
   error: null,
   loading: false,
@@ -25,7 +27,6 @@ const fail = (state, { error }) =>
   })
 
 const getUserTheme = (state, action) => {
-  const cookies = new Cookies()
   const user_theme = cookies.get('theme', { path: '/' })
   return updateObject(state, {
     error: null,
