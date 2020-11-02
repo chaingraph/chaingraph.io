@@ -69,7 +69,7 @@ const LinkComponent = ({ children, mobile = false, logo = false, header = false,
     <LinkWrapper
       onHoverStart={() => revealXAnim('open')}
       onHoverEnd={() => revealXAnim('close')}
-      mobile={mobile}
+      mobile={mobile ? 1 : 0}
     >
       <Text as={header ? 'b' : 'span'}
         style={{ position: 'relative' }}
@@ -82,7 +82,7 @@ const LinkComponent = ({ children, mobile = false, logo = false, header = false,
           to={to}
           getProps={({ isCurrent }) => isCurrent && setActive(isCurrent && header)}
           usertheme={user_theme}
-          mobile={mobile}
+          mobile={mobile ? 1 : 0}
         >
           { children }
         </LinkContainer>

@@ -1,4 +1,4 @@
-import styled, { themeGet } from 'utils/styles'
+import styled from 'utils/styles'
 import { getColors } from 'utils/utility'
 
 export const PrimaryBtn = styled.button`

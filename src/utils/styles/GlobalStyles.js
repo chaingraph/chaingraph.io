@@ -1,5 +1,5 @@
 import React from 'react'
-import { Global, css, themeGet } from './index';
+import { Global, css } from './index';
 
 const GlobalStyles = ({ userTheme }) => <Global styles={css`
   * {

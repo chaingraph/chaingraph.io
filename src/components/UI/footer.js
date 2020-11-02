@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Text, Flex, Box, Image } from 'rebass'
 import { GlobalContainer } from 'store'
 import { SvgIcon } from './icon'

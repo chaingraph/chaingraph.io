@@ -1,11 +1,10 @@
-import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React from 'react'
 import { GlobalContainer } from 'store'
 import { Icon } from './icon'
 import { HeaderMenuWrapper, MobileMenuNavigation, MobileMenuWrapper } from './styled-components'
 
 const MobileMenu = ({ active, setActive, children }) => {
-  const { user_theme, mobile } = GlobalContainer.useContainer()
+  const { user_theme } = GlobalContainer.useContainer()
 
   function resetActiveHandler() {
     setActive(a => !a)

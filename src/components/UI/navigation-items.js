@@ -1,7 +1,6 @@
 import React from 'react'
 import { Flex } from 'rebass'
 import { GlobalContainer } from 'store'
-import styled, { themeGet } from 'utils/styles'
 import { SvgIcon, Link, HeaderLogoContainer, HeaderLinkCircle } from './index'
 
 const NavigationItems = ({ mobile = false }) => {
