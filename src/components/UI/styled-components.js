@@ -100,7 +100,7 @@ const MobileMenuNavigation = styled(Flex)`
     position: relative;
     align-items: flex-end;
 
-    > div:not(:nth-child(2)) {
+    > div:not(:nth-of-type(2)) {
       height: 64px;
       margin-top: ${themeGet('space.4')};
     }

@@ -555,13 +555,13 @@ const GlobalStyles = ({ userTheme }) => <Global styles={css`
     margin-bottom: calc(1.45rem / 2);
     margin-top: calc(1.45rem / 2);
   }
-  blockquote *:last-child {
+  blockquote *:last-of-type {
     margin-bottom: 0;
   }
-  li *:last-child {
+  li *:last-of-type {
     margin-bottom: 0;
   }
-  p *:last-child {
+  p *:last-of-type {
     margin-bottom: 0;
   }
   li > p {
@@ -608,12 +608,12 @@ const GlobalStyles = ({ userTheme }) => <Global styles={css`
     padding-top: 0.725rem;
     padding-bottom: calc(0.725rem - 1px);
   }
-  th:first-child,
-  td:first-child {
+  th:first-of-type,
+  td:first-of-type {
     padding-left: 0;
   }
-  th:last-child,
-  td:last-child {
+  th:last-of-type,
+  td:last-of-type {
     padding-right: 0;
   }
   tt,
