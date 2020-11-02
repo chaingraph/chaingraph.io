@@ -15,13 +15,13 @@ const Footer = () => {
         maxWidth="1600px"
         mx="auto"
       >
-        <Box as="figure" maxWidth="820px">
-        {
-          mobile ?
-            <SvgIcon icon={`chaingraph_logo-${user_theme === 'light' ? 'l' : 'd'}-footer-m`} />
-          :
-            <Image src={`/images/chaingraph_logo_big-${user_theme === 'light' ? 'l' : 'd'}.png`} width={1} alt="chainGraph_logo_footer" />
-        }
+        <Box as="figure" maxWidth="820px" mb={5} width={1}>
+          <SvgIcon 
+            icon={mobile ?
+              `chaingraph_logo-${user_theme === 'light' ? 'l' : 'd'}-footer-m` :
+              `chaingraph_logo-big-${user_theme === 'light' ? 'l' : 'd'}`
+            }
+          />
         </Box>
         <Text as="span"
           fontWeight="300"
