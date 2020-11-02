@@ -14,6 +14,7 @@ module.exports = {
     //     path: `${__dirname}/content/blog`,
     //   },
     // },
+    `gatsby-plugin-emotion`,
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,13 +28,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `ChainGraph.io`,
+        short_name: `ChainGraph`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#151325`,
+        theme_color: `#151325`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/thumbnail.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

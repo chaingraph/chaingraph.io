@@ -1,26 +1,48 @@
-import { createGlobalStyle, themeGet } from './index';
+import React from 'react'
+import { Global, css } from './index';
 
-const GlobalStyles = createGlobalStyle` 
+const GlobalStyles = ({ userTheme }) => <Global styles={css`
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+  }
+  ::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background: ${userTheme === 'light' ? '#fff' : '#151325'}; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${userTheme === 'light' ? '#2CD5C4' : '#911C81'};
+    border-radius: 25px;
+    border: 3px solid ${userTheme === 'light' ? '#fff' : '#151325'};
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${userTheme === 'light' ? '#fff' : '#151325'}; 
+  }
   html {
-    font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
   body {
     margin: 0;
     padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: ${({ userTheme }) => userTheme === 'light' ? '#fff' : '#151325'};
-    color: ${({ userTheme }) => userTheme === 'light' ? `#111` : `#fafafa`};
-    font-family: georgia, serif;
+    background-color: ${userTheme === 'light' ? '#fff' : '#151325'};
+    color: ${userTheme === 'light' ? `#111` : `#fafafa`};
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: normal;
     word-wrap: break-word;
     font-kerning: normal;
     -moz-font-feature-settings: "kern", "liga", "clig", "calt";
     -ms-font-feature-settings: "kern", "liga", "clig", "calt";
     -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-    font-feature-settings: "kern", "liga", "clig", "calt";  
+    font-feature-settings: "kern", "liga", "clig", "calt";    
   }
   article,
   aside,
@@ -158,7 +180,7 @@ const GlobalStyles = createGlobalStyle`
   [type="reset"]:-moz-focusring,
   [type="submit"]:-moz-focusring,
   button:-moz-focusring {
-    outline: 1px dotted ButtonText;
+    outline: -webkit-focus-ring-color blue 3px;
   }
   fieldset {
     border: 1px solid silver;
@@ -533,13 +555,13 @@ const GlobalStyles = createGlobalStyle`
     margin-bottom: calc(1.45rem / 2);
     margin-top: calc(1.45rem / 2);
   }
-  blockquote *:last-child {
+  blockquote *:last-of-type {
     margin-bottom: 0;
   }
-  li *:last-child {
+  li *:last-of-type {
     margin-bottom: 0;
   }
-  p *:last-child {
+  p *:last-of-type {
     margin-bottom: 0;
   }
   li > p {
@@ -586,12 +608,12 @@ const GlobalStyles = createGlobalStyle`
     padding-top: 0.725rem;
     padding-bottom: calc(0.725rem - 1px);
   }
-  th:first-child,
-  td:first-child {
+  th:first-of-type,
+  td:first-of-type {
     padding-left: 0;
   }
-  th:last-child,
-  td:last-child {
+  th:last-of-type,
+  td:last-of-type {
     padding-right: 0;
   }
   tt,
@@ -626,7 +648,6 @@ const GlobalStyles = createGlobalStyle`
       font-size: 100%;
     }
   }
-
-`
+`} />
 
 export default GlobalStyles

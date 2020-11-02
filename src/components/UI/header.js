@@ -1,35 +1,42 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { Flex } from "rebass"
+import { GlobalContainer } from "store"
+import { HeaderComponent, HeaderMenuWrapper, Icon, NavigationItems } from './index'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
+const Header = ({ mobileMenu }) => {
+  const { height, scroll, user_theme } = GlobalContainer.useContainer()
+
+  return (
+    <HeaderComponent as="header"
+      userTheme={user_theme}
+      hide={height >= 108}
+      scroll={height >= 108 && scroll}
+      flexDirection="row"
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        maxWidth="1600px"
+        height="108px"
+        width={1}
+        p={3}
+        mx="auto"
+      >
+        <NavigationItems />
+        <HeaderMenuWrapper as="button"
+          aria-labelledby="menu_open-button-action"
+          alignItems="center"
+          justifyContent="center"
+          userTheme={user_theme}
+          onClick={mobileMenu}
         >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+          <Icon.menu size="32px" />
+        </HeaderMenuWrapper>
+      </Flex>
+    </HeaderComponent>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
