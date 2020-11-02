@@ -14,12 +14,7 @@ module.exports = {
     //     path: `${__dirname}/content/blog`,
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        displayName: false,
-      },
-    },
+    `gatsby-plugin-emotion`,
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,

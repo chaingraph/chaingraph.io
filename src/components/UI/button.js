@@ -4,7 +4,7 @@ import { getColors } from 'utils/utility'
 export const PrimaryBtn = styled.button`
   height: 42px;
   border: 2px solid ${
-    ({ userTheme }) => 
+    ({ userTheme }) =>
       getColors('buttons', 'primary', '')
   };
   color: inherit;

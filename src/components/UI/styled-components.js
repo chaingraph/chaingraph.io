@@ -23,7 +23,7 @@ const HeaderLogoContainer = styled(Box)`
 `
 
 const HeaderMenuWrapper = styled(Flex)`
-  padding: ${themeGet('space.2')}px; 
+  padding: ${themeGet('space.2')}; 
   display: flex;
   margin: auto 0;
   border: none;
@@ -72,7 +72,7 @@ const MobileMenuWrapper = styled(motion.aside)`
   justify-content: space-between;
   z-index: 1500;
   height: 100vh;
-  padding: ${themeGet('space.6')}px ${themeGet('space.4')}px;
+  padding: ${themeGet('space.6')} ${themeGet('space.4')};
   width: 100%;
   right: 0;
   top: 0;
@@ -102,7 +102,7 @@ const MobileMenuNavigation = styled(Flex)`
 
     > div:not(:nth-child(2)) {
       height: 64px;
-      margin-top: ${themeGet('space.4')}px;
+      margin-top: ${themeGet('space.4')};
     }
   }
 `

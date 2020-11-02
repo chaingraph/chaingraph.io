@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
 import { ThemeProvider, theme as global_theme } from 'utils/styles'
 import GlobalStyles from 'utils/styles/GlobalStyles'
 import { Header, Footer, MobileMenu, NavigationItems } from 'components/UI'

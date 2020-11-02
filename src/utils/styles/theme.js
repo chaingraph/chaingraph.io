@@ -1,15 +1,6 @@
 const breakpoints = ['640px', '832px', '1024px', '1200px', '1600px'];
 
 const colors = {
-  primary: {
-    100: '#003A65',
-    200: '#960088',
-    300: '#009085'
-  },
-  secondary: {
-    100: '#ffffff',
-    200: '#000000'
-  },
   main: {
     background: {
       default: '#fff',
@@ -32,6 +23,13 @@ const colors = {
       400: '#121212',
       500: '#010101'
     },
+    white: {
+      100: '#ffffff',
+      200: '#f5f5f5',
+      300: '#eeeeee',
+      400: '#e5e5e5',
+      500: '#dbdbdb',
+    }
   },
   cards: {
     light: {
@@ -60,9 +58,9 @@ const colors = {
   input: {
     error: '#F41',
     background: {
-      default: '',
-      light: '#333145',
-      dark: '#333145'
+      default: '#333145',
+      light: '',
+      dark: ''
     },
     success: {
       default: '#388e3c',
@@ -80,12 +78,12 @@ const colors = {
 /**
  * Space for margin/padding
  */
-const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
+const space = ['0px', '4px', '8px', '16px', '32px', '64px', '128px', '256px', '512px'];
 
 /**
  * Typographic scale
  */
-const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 96, 128];
+const fontSizes = ['12px', '14px', '16px', '20px', '24px', '32px', '48px', '64px', '96px', '128px'];
 const lineHeights = [1, 1.125, 1.25, 1.5];
 const fontWeights = {
   light: 300,
@@ -104,7 +102,7 @@ const letterSpacings = {
 /**
  * Border-radius
  */
-const radii = [0, 2, 4, 8, 16];
+const radii = ['0px', '2px', '4px', '8px', '16px'];
 
 export const theme = {
   name: 'Default',

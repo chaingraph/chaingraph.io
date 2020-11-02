@@ -1,22 +1,24 @@
-import * as styledComponents from 'styled-components';
-import { themeGet } from '@styled-system/theme-get';
+import * as emotion from '@emotion/core'
+import styled from '@emotion/styled'
+import { ThemeProvider } from '@emotion/react'
+import { themeGet } from '@styled-system/theme-get'
 import { theme } from './theme';
 
 const {
-  default: styled,
   css,
-  createGlobalStyle,
+  Global,
   keyframes,
-  ThemeProvider,
-} = styledComponents;
+  jsx,
+} = emotion;
 
 export {
   css,
-  createGlobalStyle,
+  Global,
   keyframes,
   ThemeProvider,
   theme,
   themeGet,
+  jsx,
 };
 
 export * from 'styled-system';

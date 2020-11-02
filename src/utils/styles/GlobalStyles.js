@@ -1,6 +1,7 @@
-import { createGlobalStyle, themeGet } from './index';
+import React from 'react'
+import { Global, css, themeGet } from './index';
 
-const GlobalStyles = createGlobalStyle` 
+const GlobalStyles = ({ userTheme }) => <Global styles={css`
   * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -13,17 +14,17 @@ const GlobalStyles = createGlobalStyle`
 
   ::-webkit-scrollbar-track,
   ::-webkit-scrollbar-corner {
-    background: ${({ userTheme }) => userTheme === 'light' ? '#fff' : '#151325'}; 
+    background: ${userTheme === 'light' ? '#fff' : '#151325'}; 
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${({ userTheme }) => userTheme === 'light' ? '#2CD5C4' : '#911C81'};
+    background: ${userTheme === 'light' ? '#2CD5C4' : '#911C81'};
     border-radius: 25px;
-    border: 3px solid ${({ userTheme }) => userTheme === 'light' ? '#fff' : '#151325'};
+    border: 3px solid ${userTheme === 'light' ? '#fff' : '#151325'};
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: ${({ userTheme }) => userTheme === 'light' ? '#fff' : '#151325'}; 
+    background: ${userTheme === 'light' ? '#fff' : '#151325'}; 
   }
   html {
     -ms-text-size-adjust: 100%;
@@ -32,8 +33,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background-color: ${({ userTheme }) => userTheme === 'light' ? '#fff' : '#151325'};
-    color: ${({ userTheme }) => userTheme === 'light' ? `#111` : `#fafafa`};
+    background-color: ${userTheme === 'light' ? '#fff' : '#151325'};
+    color: ${userTheme === 'light' ? `#111` : `#fafafa`};
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: normal;
     word-wrap: break-word;
@@ -647,7 +648,6 @@ const GlobalStyles = createGlobalStyle`
       font-size: 100%;
     }
   }
-
-`
+`} />
 
 export default GlobalStyles
