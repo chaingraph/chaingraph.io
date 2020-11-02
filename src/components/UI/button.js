@@ -27,7 +27,7 @@ export const PrimaryBtn = styled.button`
 export const SecondaryBtn = styled.button`
   height: 42px;
   border: 2px solid ${
-    ({ userTheme }) => 
+    ({ userTheme }) =>
       getColors('buttons', 'primary', userTheme)
   };
   border-radius: 47px;
