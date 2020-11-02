@@ -1,4 +1,4 @@
-import { themeGet } from "./styles";
+import { theme } from "./styles";
 
 export const updateObject = (oldObj, updatedProps) => ({
   ...oldObj,
@@ -31,5 +31,5 @@ export const checkValidity = (value, rules, pw, cpw) => {
 
 export const getColors = (pallete, component, key) => {
   const theme_key = key !== '' ? key : 'default'
-  return themeGet(`colors.${pallete}.${component}.${theme_key}`)
+  return theme.colors[pallete][component][theme_key]
 }
