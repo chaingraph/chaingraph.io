@@ -1,4 +1,5 @@
 /* eslint-disable no-nested-ternary */
+import React from 'react'
 import { Flex, Box } from 'rebass'
 import styled, { themeGet } from 'utils/styles'
 import { motion } from 'framer-motion'
@@ -112,6 +113,14 @@ const MobileMenuNavigation = styled(Flex)`
   }
 `
 
+const ContentWrapper = ({ children, ...rest }) => {
+  return (
+    <Box p={[4, 4, 0]} width={[1, 1, 1 / 2]} maxWidth={720} {...rest}>
+      {children}
+    </Box>
+  )
+}
+
 export {
   HeaderComponent,
   HeaderLogoContainer,
@@ -119,4 +128,5 @@ export {
   HeaderLinkCircle,
   MobileMenuWrapper,
   MobileMenuNavigation,
+  ContentWrapper,
 }

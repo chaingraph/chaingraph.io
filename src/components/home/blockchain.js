@@ -19,7 +19,12 @@ export function Blockchain() {
   }, [])
 
   return (
-    <BlockchainWrapper as="figure" width="600px" height="600px">
+    <BlockchainWrapper
+      as="figure"
+      width={[9 / 12, 9 / 12, 1 / 2]}
+      maxWidth={634}
+      ml="auto"
+    >
       <SvgIcon icon="hero-landing" />
     </BlockchainWrapper>
   )

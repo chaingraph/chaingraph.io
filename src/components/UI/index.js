@@ -13,7 +13,9 @@ export {
   HeaderLogoContainer,
   HeaderLinkCircle,
   HeaderMenuWrapper,
+  ContentWrapper,
 } from './styled-components'
+export { Input } from './input'
 export { Link } from './link'
 export { MobileMenu } from './mobile-menu'
 export { NavigationItems } from './navigation-items'
