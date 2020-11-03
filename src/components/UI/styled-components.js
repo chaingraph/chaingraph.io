@@ -1,12 +1,15 @@
+/* eslint-disable no-nested-ternary */
 import { Flex, Box } from 'rebass'
 import styled, { themeGet } from 'utils/styles'
 import { motion } from 'framer-motion'
 import { getColors } from 'utils/utility'
 
 const HeaderComponent = styled(Flex)`
-  background-color: ${({ userTheme, hide }) => !hide ? 'transparent' : userTheme === 'light' ? '#fff' : '#151325'};
+  background-color: ${({ userTheme, hide }) =>
+    !hide ? 'transparent' : userTheme === 'light' ? '#fff' : '#151325'};
   position: sticky;
-  transform: ${({ scroll, hide }) => scroll === true || !hide  ? 'translateY(0px)' : 'translateY(-109px)'};
+  transform: ${({ scroll, hide }) =>
+    scroll === true || !hide ? 'translateY(0px)' : 'translateY(-109px)'};
   transition: transform 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86) 50ms;
   z-index: 1500;
   width: 100%;
@@ -15,21 +18,21 @@ const HeaderComponent = styled(Flex)`
 `
 
 const HeaderLogoContainer = styled(Box)`
-  display: ${({ mobile }) => mobile ? 'block' : 'none'};
+  display: ${({ mobile }) => (mobile ? 'block' : 'none')};
 
   @media screen and (min-width: ${themeGet('breakpoints.0')}) {
-    display: ${({ mobile }) => !mobile ? 'block' : 'none'};
+    display: ${({ mobile }) => (!mobile ? 'block' : 'none')};
   }
 `
 
 const HeaderMenuWrapper = styled(Flex)`
-  padding: ${themeGet('space.2')}; 
+  padding: ${themeGet('space.2')};
   display: flex;
   margin: auto 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
-  color: ${({ userTheme }) => userTheme === 'light' ? '#111' : '#fff'};
+  color: ${({ userTheme }) => (userTheme === 'light' ? '#111' : '#fff')};
 
   @media screen and (min-width: ${themeGet('breakpoints.0')}) {
     display: none;
@@ -38,13 +41,14 @@ const HeaderMenuWrapper = styled(Flex)`
 
 const HeaderLinkCircle = styled.div`
   position: relative;
-  display: ${({ mobile }) => mobile ? 'initial' : 'none'};
+  display: ${({ mobile }) => (mobile ? 'initial' : 'none')};
 
   > div.circle {
     position: absolute;
     width: 72px;
     height: 72px;
-    background-color: ${({ userTheme }) => userTheme === 'light' ? '#2CD5C4' : '#911C81'};
+    background-color: ${({ userTheme }) =>
+    userTheme === 'light' ? '#2CD5C4' : '#911C81'};
     border-radius: 50%;
     right: 24px;
     top: -22px;
@@ -58,12 +62,13 @@ const HeaderLinkCircle = styled.div`
   }
 
   @media screen and (min-width: ${themeGet('breakpoints.0')}) {
-    display: ${({ mobile }) => !mobile ? 'initial' : 'none'};
+    display: ${({ mobile }) => (!mobile ? 'initial' : 'none')};
   }
 `
 
 const MobileMenuWrapper = styled(motion.aside)`
-  background-color: ${({ userTheme }) => getColors('main', 'background', userTheme)};
+  background-color: ${({ userTheme }) =>
+    getColors('main', 'background', userTheme)};
   position: fixed;
   box-sizing: border-box;
   display: flex;

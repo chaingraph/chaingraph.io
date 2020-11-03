@@ -13,17 +13,19 @@ const Layout = ({ children }) => {
   const htmlRef = useRef(null)
 
   useEffect(() => {
-    if (document && !htmlRef.current)
+    if (document && !htmlRef.current) {
       htmlRef.current = document.querySelector('html')
-    else if (document && htmlRef.current)
+    } else if (document && htmlRef.current) {
       htmlRef.current.style.overflowY = 'initial'
+    }
 
-    if (mobMenu && htmlRef.current)
+    if (mobMenu && htmlRef.current) {
       htmlRef.current.style.overflowY = 'hidden'
+    }
   }, [mobMenu])
 
   function mobileMenuHandler() {
-    setMobMenu(mm => !mm)
+    setMobMenu((mm) => !mm)
   }
 
   return (
@@ -38,7 +40,7 @@ const Layout = ({ children }) => {
           {children}
         </Box>
         <Footer userTheme={user_theme} />
-      </Box> 
+      </Box>
     </ThemeProvider>
   )
 }
@@ -53,8 +55,6 @@ export default ({ children }) => (
       ...globalState,
     }}
   >
-    <Layout>
-      {children}
-    </Layout>
+    <Layout>{children}</Layout>
   </GlobalContainer.Provider>
 )

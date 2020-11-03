@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Cookies from 'universal-cookie'
 import { updateObject } from 'utils/utility'
 import * as at from '../actions/action-types'
@@ -31,7 +32,7 @@ const getUserTheme = (state, action) => {
   return updateObject(state, {
     error: null,
     loading: false,
-    user_theme
+    user_theme,
   })
 }
 
@@ -44,22 +45,22 @@ const setUserTheme = (state, { user_theme }) =>
 
 const mobileState = (state, { mobile }) =>
   updateObject(state, {
-    mobile
+    mobile,
   })
 
 const scrollState = (state, { scroll }) =>
   updateObject(state, {
-    scroll
+    scroll,
   })
 
 const scrollHeight = (state, { height }) =>
   updateObject(state, {
-    height
+    height,
   })
 
 const scrollYOffset = (state, { yOffset }) =>
   updateObject(state, {
-    yOffset
+    yOffset,
   })
 
 const reducer = (state = initState, action) => {
@@ -85,6 +86,6 @@ const reducer = (state = initState, action) => {
   }
 }
 
-export const globalState = {...initState}
+export const globalState = { ...initState }
 
 export default reducer

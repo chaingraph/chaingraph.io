@@ -5,11 +5,13 @@ import * as actions from './actions'
 import * as at from './actions/action-types'
 
 function debug(type, value) {
-  if (process.env.NODE_ENV === 'development')
-    console.info(
-      '|| ACTION_EXECUTED ||\n—————————————————————\n',
-      { type, ...value }
-    )
+  if (process.env.NODE_ENV === 'development') {
+    // eslint-disable-next-line no-console
+    console.log('|| ACTION_EXECUTED ||\n—————————————————————\n', {
+      type,
+      ...value,
+    })
+  }
 }
 
 const useGlobalStore = () => {
@@ -29,7 +31,7 @@ const useGlobalStore = () => {
     mobileStateHandler()
     scrollStateHandler()
   }, [])
-  
+
   const mobileHandler = useCallback(mobileStateHandler, [mobile])
   const scrollHandler = useCallback(scrollStateHandler, [height, yOffset])
 
@@ -52,7 +54,8 @@ const useGlobalStore = () => {
         active_debug === true && debug(at.MOBILE_STATE, { mobile, value: true })
         dispatch(mobileState(true))
       } else if (innerWidth > 640 && mobile) {
-        active_debug === true && debug(at.MOBILE_STATE, { mobile, value: false })
+        active_debug === true &&
+          debug(at.MOBILE_STATE, { mobile, value: false })
         dispatch(mobileState(false))
       }
     } catch (error) {
@@ -61,25 +64,28 @@ const useGlobalStore = () => {
   }
 
   function scrollStateHandler(active_debug = false) {
-    const { scrollY, pageYOffset } = window;
+    const { scrollY, pageYOffset } = window
     const { scrollState, scrollYOffset, scrollHeight, globalFail } = actions
     try {
       if (height !== scrollY) {
-        active_debug === true && debug(at.SET_HEIGHT, { height, value: scrollY })
+        active_debug === true &&
+          debug(at.SET_HEIGHT, { height, value: scrollY })
         dispatch(scrollHeight(scrollY))
       }
-  
+
       if (yOffset > pageYOffset && !scroll) {
         active_debug === true && debug(at.SCROLL_STATE, { scroll, value: true })
         dispatch(scrollState(true))
       } else if (yOffset < pageYOffset && scroll) {
-        active_debug === true && debug(at.SCROLL_STATE, { scroll, value: false })
+        active_debug === true &&
+          debug(at.SCROLL_STATE, { scroll, value: false })
         dispatch(scrollState(false))
       }
-  
-      active_debug === true && debug(at.SET_YOFFSET, { yOffset, value: pageYOffset })
+
+      active_debug === true &&
+        debug(at.SET_YOFFSET, { yOffset, value: pageYOffset })
       dispatch(scrollYOffset(pageYOffset))
-    } catch(error) {
+    } catch (error) {
       dispatch(globalFail(error))
     }
   }
@@ -87,19 +93,24 @@ const useGlobalStore = () => {
   function userThemeHandler(active_debug = false) {
     const { matchMedia } = window
     const { getUserTheme, setUserTheme, globalFail } = actions
-    
+
     try {
-      active_debug === true && debug(at.GET_USER_THEME, { user_theme, value: user_theme })
-      
+      active_debug === true &&
+        debug(at.GET_USER_THEME, { user_theme, value: user_theme })
+
       dispatch(getUserTheme())
-      
+
       if (!user_theme) {
         const isDark = matchMedia('(prefers-color-scheme: dark)')
-        active_debug === true && debug(at.SET_USER_THEME, { user_theme, value: isDark ? 'dark' : 'light' })
-  
+        active_debug === true &&
+          debug(at.SET_USER_THEME, {
+            user_theme,
+            value: isDark ? 'dark' : 'light',
+          })
+
         dispatch(setUserTheme(isDark ? 'dark' : 'light'))
       }
-    } catch(error) {
+    } catch (error) {
       dispatch(globalFail(error))
     }
   }
@@ -108,9 +119,10 @@ const useGlobalStore = () => {
     const { setUserTheme, globalFail } = actions
 
     try {
-      active_debug === true && debug(at.SET_USER_THEME, { user_theme, value: theme })
+      active_debug === true &&
+        debug(at.SET_USER_THEME, { user_theme, value: theme })
       dispatch(setUserTheme(theme))
-    } catch(error) {
+    } catch (error) {
       dispatch(globalFail(error))
     }
   }

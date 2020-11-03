@@ -1,15 +1,14 @@
-import React from "react"
+import React from 'react'
 
-import Layout from "components/layout"
-import SEO from "components/seo"
-import HomeComponent from "components/home"
+import Layout from 'components/layout'
+import { SEO } from 'components/seo'
+import { Home } from 'components/home'
 
-const IndexPage = () => {
-  
+function IndexPage() {
   return (
     <Layout>
       <SEO title="Home" />
-      <HomeComponent />
+      <Home />
     </Layout>
   )
 }

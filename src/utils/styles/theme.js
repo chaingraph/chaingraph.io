@@ -1,27 +1,27 @@
-const breakpoints = ['640px', '832px', '1024px', '1200px', '1600px'];
+const breakpoints = ['640px', '832px', '1024px', '1200px', '1600px']
 
 const colors = {
   main: {
     background: {
       default: '#fff',
       light: '#fff',
-      dark: '#151325'
+      dark: '#151325',
     },
     primary: {
       100: '#003A65',
       200: '#960088',
-      300: '#009085'
+      300: '#009085',
     },
     secondary: {
       100: '#ffffff',
-      200: '#000000'
+      200: '#000000',
     },
     black: {
       100: '#414141',
       200: '#303030',
       300: '#232323',
       400: '#121212',
-      500: '#010101'
+      500: '#010101',
     },
     white: {
       100: '#ffffff',
@@ -29,7 +29,7 @@ const colors = {
       300: '#eeeeee',
       400: '#e5e5e5',
       500: '#dbdbdb',
-    }
+    },
   },
   cards: {
     light: {
@@ -40,69 +40,94 @@ const colors = {
     dark: {
       default: 'linear-gradient(180deg, #524F67 0%, rgba(70, 68, 87, 0) 100%)',
       active: 'linear-gradient(180deg, #2CD5C4 0%, rgba(70, 68, 87, 0) 100%)',
-      color: '#fff'
-    }
+      color: '#fff',
+    },
   },
   buttons: {
     primary: {
       default: '#2CD5C4',
       light: '',
-      dark: ''
+      dark: '',
     },
     secondary: {
       default: '#2CD5C4',
       light: '',
-      dark: ''
+      dark: '',
     },
   },
   input: {
-    error: '#F41',
+    error: {
+      default: '#F41',
+      light: '',
+      dark: '',
+    },
     background: {
       default: '#333145',
       light: '',
-      dark: ''
+      dark: '',
     },
     success: {
       default: '#388e3c',
       light: '',
-      dark: ''
+      dark: '',
     },
     warning: {
       default: '#fff176',
       light: '',
-      dark: ''
-    }
+      dark: '',
+    },
   },
-};
+}
 
 /**
  * Space for margin/padding
  */
-const space = ['0px', '4px', '8px', '16px', '32px', '64px', '128px', '256px', '512px'];
+const space = [
+  '0px',
+  '4px',
+  '8px',
+  '16px',
+  '32px',
+  '64px',
+  '128px',
+  '256px',
+  '512px',
+]
 
 /**
  * Typographic scale
  */
-const fontSizes = ['12px', '14px', '16px', '20px', '24px', '32px', '48px', '64px', '96px', '128px'];
-const lineHeights = [1, 1.125, 1.25, 1.5];
+const fontSizes = [
+  '12px',
+  '14px',
+  '16px',
+  '20px',
+  '24px',
+  '32px',
+  '48px',
+  '64px',
+  '96px',
+  '128px',
+]
+const lineHeights = [1, 1.125, 1.25, 1.5]
 const fontWeights = {
   light: 300,
   regular: 400,
   medium: 500,
   semibold: 600,
   bold: 700,
-  extrabold: 800
-};
+  extrabold: 800,
+}
 const letterSpacings = {
   normal: 'normal',
   caps: '0.25em',
   labels: '0.05em',
-};
+}
 
 /**
  * Border-radius
  */
-const radii = ['0px', '2px', '4px', '8px', '16px'];
+const radii = ['0px', '2px', '4px', '8px', '16px']
 
 export const theme = {
   name: 'Default',
@@ -113,5 +138,5 @@ export const theme = {
   lineHeights,
   fontWeights,
   letterSpacings,
-  radii
-};
+  radii,
+}

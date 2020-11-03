@@ -1,17 +1,23 @@
-import PropTypes from "prop-types"
-import React from "react"
-import { Flex } from "rebass"
-import { GlobalContainer } from "store"
-import { HeaderComponent, HeaderMenuWrapper, Icon, NavigationItems } from './index'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Flex } from 'rebass'
+import { GlobalContainer } from 'store'
+import {
+  HeaderComponent,
+  HeaderMenuWrapper,
+  Icon,
+  NavigationItems,
+} from './index'
 
-const Header = ({ mobileMenu }) => {
+export function Header({ mobileMenu }) {
   const { height, scroll, user_theme } = GlobalContainer.useContainer()
 
   return (
-    <HeaderComponent as="header"
+    <HeaderComponent
+      as="header"
       userTheme={user_theme}
-      hide={height >= 108}
-      scroll={height >= 108 && scroll}
+      hide={height >= 64}
+      scroll={height >= 64 && scroll}
       flexDirection="row"
     >
       <Flex
@@ -24,7 +30,8 @@ const Header = ({ mobileMenu }) => {
         mx="auto"
       >
         <NavigationItems />
-        <HeaderMenuWrapper as="button"
+        <HeaderMenuWrapper
+          as="button"
           aria-labelledby="menu_open-button-action"
           alignItems="center"
           justifyContent="center"
@@ -43,7 +50,5 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: '',
 }
-
-export default Header

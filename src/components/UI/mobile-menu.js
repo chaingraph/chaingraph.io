@@ -1,31 +1,42 @@
 import React from 'react'
 import { GlobalContainer } from 'store'
 import { Icon } from './icon'
-import { HeaderMenuWrapper, MobileMenuNavigation, MobileMenuWrapper } from './styled-components'
+import {
+  HeaderMenuWrapper,
+  MobileMenuNavigation,
+  MobileMenuWrapper,
+} from './styled-components'
 
-const MobileMenu = ({ active, setActive, children }) => {
+export function MobileMenu({ active, setActive, children }) {
   const { user_theme } = GlobalContainer.useContainer()
 
   function resetActiveHandler() {
-    setActive(a => !a)
-  } 
+    setActive((a) => !a)
+  }
 
   return (
     <MobileMenuWrapper
-      animate={active ? {
-        x: '0%'
-      } : {
-        x: '100%'
-      }}
-      initial={active && {
-        x: '100%'
-      }}
+      animate={
+        active
+          ? {
+            x: '0%',
+          }
+          : {
+            x: '100%',
+          }
+      }
+      initial={
+        active && {
+          x: '100%',
+        }
+      }
       transition={{
-        ease: 'linear'
+        ease: 'linear',
       }}
       userTheme={user_theme}
     >
-      <HeaderMenuWrapper as="button"
+      <HeaderMenuWrapper
+        as="button"
         aria-labelledby="menu_close-button-action"
         alignItems="center"
         justifyContent="center"
@@ -44,5 +55,3 @@ const MobileMenu = ({ active, setActive, children }) => {
     </MobileMenuWrapper>
   )
 }
-
-export default MobileMenu
