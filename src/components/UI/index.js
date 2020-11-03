@@ -17,4 +17,5 @@ export {
 export { Link } from './link'
 export { MobileMenu } from './mobile-menu'
 export { NavigationItems } from './navigation-items'
+export { Image } from './image'
 export { Button }
