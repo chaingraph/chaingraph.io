@@ -3,10 +3,7 @@ import { getColors } from 'utils/utility'
 
 export const PrimaryBtn = styled.button`
   height: 42px;
-  border: 2px solid ${
-    ({ userTheme }) =>
-      getColors('buttons', 'primary', '')
-  };
+  border: 2px solid ${getColors('buttons', 'primary', '')};
   color: inherit;
   border-radius: 47px;
   padding: 6px 24px;
@@ -20,16 +17,15 @@ export const PrimaryBtn = styled.button`
 
   &:hover {
     background-color: ${getColors('buttons', 'primary', '')};
-    border-color: ${({ userTheme }) => getColors('main', 'background', userTheme)};
+    border-color: ${({ userTheme }) =>
+    getColors('main', 'background', userTheme)};
   }
 `
 
 export const SecondaryBtn = styled.button`
   height: 42px;
-  border: 2px solid ${
-    ({ userTheme }) =>
-      getColors('buttons', 'primary', userTheme)
-  };
+  border: 2px solid
+    ${({ userTheme }) => getColors('buttons', 'primary', userTheme)};
   border-radius: 47px;
   padding: 6px 6px;
   display: flex;
@@ -37,8 +33,5 @@ export const SecondaryBtn = styled.button`
   justify-content: space-between;
   cursor: pointer;
   color: #fff;
-  background-color: ${
-    ({ userTheme }) =>
-      getColors('buttons', 'secondary', '')
-  };
+  background-color: ${getColors('buttons', 'secondary', '')};
 `

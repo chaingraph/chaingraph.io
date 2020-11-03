@@ -25,35 +25,35 @@ function setUserTheme(theme) {
   cookies.set('theme', theme, { path: '/' })
   return {
     type: at.GET_USER_THEME,
-    user_theme
+    user_theme,
   }
 }
 
 function mobileState(mobile = false) {
   return {
     type: at.MOBILE_STATE,
-    mobile
+    mobile,
   }
 }
 
 function scrollState(scroll = false) {
   return {
     type: at.SCROLL_STATE,
-    scroll
+    scroll,
   }
 }
 
 function scrollHeight(height) {
   return {
     type: at.SET_HEIGHT,
-    height
+    height,
   }
 }
 
 function scrollYOffset(yOffset) {
   return {
     type: at.SET_YOFFSET,
-    yOffset
+    yOffset,
   }
 }
 
