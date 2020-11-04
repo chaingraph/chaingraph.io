@@ -46,13 +46,13 @@ const colors = {
   buttons: {
     primary: {
       default: '#2CD5C4',
-      light: '',
-      dark: '',
+      light: '#fff',
+      dark: '#151325',
     },
     secondary: {
       default: '#2CD5C4',
-      light: '',
-      dark: '',
+      light: '#fff',
+      dark: '#151325',
     },
   },
   input: {

@@ -29,7 +29,7 @@ export function Header({ mobileMenu }) {
         p={3}
         mx="auto"
       >
-        <NavigationItems />
+        <NavigationItems header />
         <HeaderMenuWrapper
           as="button"
           aria-labelledby="menu_open-button-action"

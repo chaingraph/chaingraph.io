@@ -14,6 +14,11 @@ export {
   HeaderLinkCircle,
   HeaderMenuWrapper,
   ContentWrapper,
+  CardWrapper,
+  CardContainer,
+  ThemeBtnWrapper,
+  Title,
+  Grid,
 } from './styled-components'
 export { Input } from './input'
 export { Link } from './link'

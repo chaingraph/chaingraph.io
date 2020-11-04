@@ -18,7 +18,6 @@ export function NavigationItems({ mobile = false }) {
           <Link to="/" logo>
             <SvgIcon
               icon={`chaingraph_logo-${user_theme === 'light' ? 'l' : 'd'}`}
-              size={[76, 76, 76, 76]}
             />
           </Link>
         </HeaderLogoContainer>

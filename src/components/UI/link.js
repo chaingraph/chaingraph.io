@@ -114,6 +114,6 @@ export function Link({
       </Text>
     </LinkWrapper>
   ) : (
-    <Link to={to}>{children}</Link>
+    <LinkContainer to={to}>{children}</LinkContainer>
   )
 }

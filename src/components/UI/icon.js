@@ -20,6 +20,8 @@ import {
   FiCopy,
   FiAtSign,
   FiMenu,
+  FiMoon,
+  FiSun,
 } from 'react-icons/fi'
 import { Flex, Box } from 'rebass'
 import { motion } from 'framer-motion'
@@ -106,6 +108,8 @@ export const Icon = {
   copy: (props) => <FiCopy {...props} />,
   github: (props) => <FaGithub {...props} />,
   menu: (props) => <FiMenu {...props} />,
+  light: (props) => <FiSun {...props} />,
+  dark: (props) => <FiMoon {...props} />,
 }
 
 export const SvgIcon = ({ icon, size, color }) => (
