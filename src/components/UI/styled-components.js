@@ -1,5 +1,6 @@
 /* eslint-disable no-nested-ternary */
-import { Flex, Box } from 'rebass'
+import React from 'react'
+import { Flex, Box, Card, Text } from 'rebass'
 import styled, { themeGet } from 'utils/styles'
 import { motion } from 'framer-motion'
 import { getColors } from 'utils/utility'
@@ -112,6 +113,62 @@ const MobileMenuNavigation = styled(Flex)`
   }
 `
 
+const Title = styled(Text)`
+  text-transform: capitalize;
+  text-shadow: 0px 5px 80px rgba(255, 255, 255, 0.51);
+`
+
+const ThemeBtnWrapper = styled.span`
+  position: absolute;
+  right: 32px;
+  top: 32px;
+`
+
+const ContentWrapper = ({ children, ...rest }) => {
+  return (
+    <Box p={[4, 4, 0]} width={[1, 1, 1 / 2]} maxWidth={720} {...rest}>
+      {children}
+    </Box>
+  )
+}
+
+const Grid = styled(Box)`
+  width: 100%;
+  margin-bottom: 40px;
+  column-count: 1;
+  column-gap: 1rem;
+  column-fill: auto;
+  grid-template-columns: repeat(1, 1fr);
+  display: grid;
+
+  @media (min-width: ${themeGet('breakpoints.1')}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: ${themeGet('breakpoints.3')}) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+`
+
+const CardWrapper = styled(Card)`
+  border-radius: 30px;
+  background: ${({ userTheme }) => getColors('cards', userTheme, '')};
+  color: ${({ userTheme }) => getColors('cards', userTheme, 'color')};
+  transition: background 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 50ms,
+    all 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 75ms;
+
+  &:hover,
+  &:focus {
+    background: ${({ userTheme }) => getColors('cards', userTheme, 'active')};
+    color: ${({ userTheme }) => (userTheme === 'light' ? '#111' : '#fff')};
+
+    path {
+      fill: ${({ userTheme }) => (userTheme === 'light' ? '#111' : '#fff')};
+    }
+  }
+`
+const CardContainer = styled(Flex)``
+
 export {
   HeaderComponent,
   HeaderLogoContainer,
@@ -119,4 +176,10 @@ export {
   HeaderLinkCircle,
   MobileMenuWrapper,
   MobileMenuNavigation,
+  ContentWrapper,
+  CardWrapper,
+  CardContainer,
+  ThemeBtnWrapper,
+  Title,
+  Grid,
 }

@@ -1,30 +1,49 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
-import { Button } from 'components/UI'
-import { GlobalContainer } from 'store'
+import { Title, ContentWrapper } from 'components/UI'
+import { Blockchain } from './blockchain'
+import { Flex, Text, Box } from 'rebass'
+import { Features } from './features'
+import { Subscribe } from './subscribe'
+import styled from 'utils/styles'
 
 export function Home() {
-  const { setUserThemeHandler, user_theme } = GlobalContainer.useContainer()
-
-  function changeThemeHandler() {
-    if (user_theme === 'light') {
-      setUserThemeHandler('dark', false)
-    } else {
-      setUserThemeHandler('light', false)
-    }
-  }
+  const titleHero = 'one graph for all chains'
+  const heroSub =
+    'Blockchain real-time data without any hassle. ChainGraph provides reliable real-time graphql APIs for blockchain applications.'
+  const titleSubscribe = 'Get notice when Beta App is release.'
 
   return (
     <React.Fragment>
-      <h1>
-        This is Home, bro{' '}
-        <span role="img" aria-label="emoji-chan">
-          &#x1F92D;
-        </span>
-      </h1>
-      <b>Your browser has {user_theme} theme active.</b>
-      <Button.PrimaryBtn onClick={changeThemeHandler} userTheme={user_theme}>
-        change theme
-      </Button.PrimaryBtn>
+      <Flex
+        width={1}
+        alignItems="center"
+        justifyContent="space-between"
+        flexWrap="wrap"
+      >
+        <ContentWrapper>
+          <Title as="h1" fontSize={[7, 7, 7, 7, 8]} mb={[3, 4, 4, 4, 5]}>
+            {titleHero}
+          </Title>
+          <Text
+            as="p"
+            fontSize={[3, 4, 4, 4, 5]}
+            fontWeight="light"
+            lineHeight={3}
+            maxWidth={670}
+          >
+            {heroSub}
+          </Text>
+        </ContentWrapper>
+        <Blockchain />
+      </Flex>
+      <ContentWrapper>
+        <Text as="p" fontSize={[3, 4, 4, 4, 5]} fontWeight="medium" mb={4}>
+          {titleSubscribe}
+        </Text>
+        <Subscribe />
+      </ContentWrapper>
+      <Features />
     </React.Fragment>
   )
 }

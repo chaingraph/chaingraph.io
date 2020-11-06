@@ -1,13 +1,38 @@
 import React from 'react'
 import { Text, Flex, Box } from 'rebass'
 import { GlobalContainer } from 'store'
-import { SvgIcon } from './icon'
+import { SvgIcon, Icon, Button, ThemeBtnWrapper } from './index'
 
 export function Footer() {
-  const { mobile, user_theme } = GlobalContainer.useContainer()
+  const {
+    mobile,
+    user_theme,
+    setUserThemeHandler,
+  } = GlobalContainer.useContainer()
+
+  function changeThemeHandler() {
+    if (user_theme === 'light') {
+      setUserThemeHandler('dark', false)
+    } else {
+      setUserThemeHandler('light', false)
+    }
+  }
 
   return (
-    <Box as="footer" width={1} p={3}>
+    <Box as="footer" width={1} p={3} style={{ position: 'relative' }}>
+      <ThemeBtnWrapper>
+        <Button.PrimaryBtn
+          onClick={changeThemeHandler}
+          userTheme={user_theme}
+          icon
+        >
+          {user_theme === 'light' ? (
+            <Icon.light size="32px" />
+          ) : (
+            <Icon.dark size="32px" />
+          )}
+        </Button.PrimaryBtn>
+      </ThemeBtnWrapper>
       <Flex
         justifyContent="space-between"
         flexDirection="column"

@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
       <MobileMenu active={mobMenu} setActive={setMobMenu}>
         <NavigationItems mobile />
       </MobileMenu>
-      <Box mt={6}>
+      <Box mt={4}>
         <Box as="main" maxWidth="1600px" mx="auto" px={3}>
           {children}
         </Box>
