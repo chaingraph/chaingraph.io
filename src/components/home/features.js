@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { GlobalContainer } from 'store'
-import { Box, Flex, Text } from 'rebass'
+import { Flex, Text } from 'rebass'
 import { CardWrapper, CardContainer, Title, Grid, SvgIcon } from 'components/UI'
+import { theme } from 'utils/styles'
 
 export function Features() {
   const { user_theme } = GlobalContainer.useContainer()
@@ -28,7 +29,17 @@ export function Features() {
     },
   ]
 
-  return (
+  const initialAnim = {
+    background: theme.colors.cards[user_theme]?.default,
+    color: theme.colors.cards[user_theme]?.color,
+    fill: theme.colors.cards[user_theme]?.color,
+  }
+  const hoverAnim = {
+    background: theme.colors.cards[user_theme]?.active,
+    fill: theme.colors.cards[user_theme]?.color,
+  }
+
+  return user_theme ? (
     <Flex
       as="article"
       alignItems="center"
@@ -53,13 +64,10 @@ export function Features() {
         {features.map((f, i) => (
           <CardWrapper
             key={`feature_${i + 1}`}
-            userTheme={user_theme}
-            minWidth={275}
-            maxWidth={335}
-            height={335}
-            mt={5}
-            mb="auto"
-            mx="auto"
+            whileHover={hoverAnim}
+            animate={initialAnim}
+            initial={initialAnim}
+            style={initialAnim}
           >
             <CardContainer as="figure" height="66%" width={10 / 12} mx="auto">
               <SvgIcon icon={f.icon} logo />
@@ -73,5 +81,7 @@ export function Features() {
         ))}
       </Grid>
     </Flex>
+  ) : (
+    <></>
   )
 }

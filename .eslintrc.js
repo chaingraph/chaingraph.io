@@ -4,4 +4,9 @@ module.exports = {
     '@blockmatic/eslint-config-base',
     '@blockmatic/eslint-config-react',
   ],
+  settings: {
+    'import/resolver': {
+      alias: true,
+    },
+  },
 }

@@ -1,4 +1,4 @@
-import Cookies from 'universal-cookie'
+import Cookies from 'universal-cookie/es6'
 import * as at from './action-types'
 
 function globalStart() {

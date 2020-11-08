@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React from 'react'
-import { Flex, Box, Card, Text } from 'rebass'
+import { Flex, Box, Text } from 'rebass'
 import styled, { themeGet } from 'utils/styles'
 import { motion } from 'framer-motion'
 import { getColors } from 'utils/utility'
@@ -150,22 +150,12 @@ const Grid = styled(Box)`
   }
 `
 
-const CardWrapper = styled(Card)`
+const CardWrapper = styled(motion.div)`
+  width: 280px;
+  height: 335px;
+  margin: ${themeGet('space.5')} auto auto;
   border-radius: 30px;
-  background: ${({ userTheme }) => getColors('cards', userTheme, '')};
-  color: ${({ userTheme }) => getColors('cards', userTheme, 'color')};
-  transition: background 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 50ms,
-    all 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 75ms;
-
-  &:hover,
-  &:focus {
-    background: ${({ userTheme }) => getColors('cards', userTheme, 'active')};
-    color: ${({ userTheme }) => (userTheme === 'light' ? '#111' : '#fff')};
-
-    path {
-      fill: ${({ userTheme }) => (userTheme === 'light' ? '#111' : '#fff')};
-    }
-  }
+  transition: fill 0.15s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 `
 const CardContainer = styled(Flex)``
 

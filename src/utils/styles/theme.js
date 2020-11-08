@@ -33,8 +33,9 @@ const colors = {
   },
   cards: {
     light: {
-      default: '#0E144A',
-      active: '#2CD5C4',
+      default:
+        'linear-gradient(180deg, #0E144A 100%, rgba(70, 68, 87, 0) 100%)',
+      active: 'linear-gradient(180deg, #2CD5C4 100%, rgba(70, 68, 87, 0) 100%)',
       color: '#fff',
     },
     dark: {
