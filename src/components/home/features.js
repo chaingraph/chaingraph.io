@@ -47,6 +47,7 @@ export function Features() {
       flexDirection="column"
       width={1}
       mb={6}
+      id="features"
     >
       <Title as="h1" fontSize={[6, 6, 6, 6, 7]} mb={[3, 4, 4, 4, 5]}>
         Features

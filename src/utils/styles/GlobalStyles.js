@@ -8,6 +8,7 @@ const GlobalStyles = ({ userTheme }) => (
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         box-sizing: border-box;
+        scroll-behavior: smooth;
       }
       ::-webkit-scrollbar {
         width: 13px;
