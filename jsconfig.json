@@ -4,6 +4,16 @@
     "rootDirs": ["./src"],
     "target": "es6",
     "module": "commonjs",
+    "paths": {
+      "components": ["src/components"],
+      "templates": ["src/templates"],
+      "pages": ["src/pages"],
+      "images": ["src/images"],
+      "context": ["src/context"],
+      "utils": ["src/utils"],
+      "store": ["src/store"],
+      "hooks": ["src/hooks"],
+    },
   },
   "include": ["./src/**/*"]
 }

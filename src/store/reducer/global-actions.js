@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import Cookies from 'universal-cookie'
+import Cookies from 'universal-cookie/es6'
 import { updateObject } from 'utils/utility'
 import * as at from '../actions/action-types'
 
