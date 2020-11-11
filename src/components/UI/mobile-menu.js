@@ -14,7 +14,7 @@ export function MobileMenu({ active, setActive, children }) {
     setActive((a) => !a)
   }
 
-  return (
+  return user_theme ? (
     <MobileMenuWrapper
       animate={
         active
@@ -53,5 +53,7 @@ export function MobileMenu({ active, setActive, children }) {
         {children}
       </MobileMenuNavigation>
     </MobileMenuWrapper>
+  ) : (
+    <></>
   )
 }

@@ -35,12 +35,16 @@ export function NavigationItems({ mobile = false }) {
           Features
         </Link>
       </Flex>
-      <HeaderLinkCircle mobile={mobile} userTheme={user_theme}>
-        <div className="circle" />
-        <Link header mobile={mobile} fontSize={4} ml={5}>
-          Join github
-        </Link>
-      </HeaderLinkCircle>
+      {user_theme ? (
+        <HeaderLinkCircle mobile={mobile} userTheme={user_theme}>
+          <div className="circle" />
+          <Link header mobile={mobile} fontSize={4} ml={5}>
+            Join github
+          </Link>
+        </HeaderLinkCircle>
+      ) : (
+        <></>
+      )}
     </React.Fragment>
   )
 }

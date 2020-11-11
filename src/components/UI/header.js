@@ -24,22 +24,26 @@ export function Header({ mobileMenu }) {
         justifyContent="space-between"
         alignItems="center"
         maxWidth="1600px"
-        height="108px"
+        height={[72, 108]}
         width={1}
         p={3}
         mx="auto"
       >
         <NavigationItems header />
-        <HeaderMenuWrapper
-          as="button"
-          aria-labelledby="menu_open-button-action"
-          alignItems="center"
-          justifyContent="center"
-          userTheme={user_theme}
-          onClick={mobileMenu}
-        >
-          <Icon.menu size="32px" />
-        </HeaderMenuWrapper>
+        {user_theme ? (
+          <HeaderMenuWrapper
+            as="button"
+            aria-labelledby="menu_open-button-action"
+            alignItems="center"
+            justifyContent="center"
+            userTheme={user_theme}
+            onClick={mobileMenu}
+          >
+            <Icon.menu size="32px" />
+          </HeaderMenuWrapper>
+        ) : (
+          <></>
+        )}
       </Flex>
     </HeaderComponent>
   )

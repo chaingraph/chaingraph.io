@@ -27,7 +27,6 @@ const HeaderLogoContainer = styled(Box)`
 `
 
 const HeaderMenuWrapper = styled(Flex)`
-  padding: ${themeGet('space.2')};
   display: flex;
   margin: auto 0;
   border: none;
