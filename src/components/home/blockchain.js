@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from 'react'
-import { SvgIcon } from 'components/UI'
+import React from 'react'
 import { Box } from 'rebass'
-import { useAnimation, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import styled, { themeGet } from 'utils/styles'
 
 const BlockchainWrapper = styled(Box)`
@@ -10,17 +9,37 @@ const BlockchainWrapper = styled(Box)`
 
   svg {
     position: relative;
-    top: ${themeGet('space.6')};
+    top: -16px;
     width: 100%;
     height: 100%;
+
+    g#container {
+      transform-style: preserve-3d;
+      perspective: 1500px;
+    }
+
+    g {
+      backface-visibility: visible;
+      perspective-origin: 150% 150%;
+      transform-style: preserve-3d;
+    }
+  }
+
+  @media screen and (min-width: ${themeGet('breakpoints.1')}) {
+    svg {
+      top: ${themeGet('space.6')};
+    }
   }
 `
 
 export function Blockchain() {
   const transition = {
     repeat: Infinity,
-    duration: 3,
+    duration: 10,
     repeatType: 'reverse',
+    ease: 'linear',
+    type: 'spring',
+    stiffness: 144,
   }
 
   return (
@@ -33,6 +52,9 @@ export function Blockchain() {
       <motion.svg
         width="2596px"
         height="2412px"
+        animate={{ y: [0, 20, 10, -10] }}
+        initial={{ y: 0 }}
+        transition={transition}
         viewBox="0 0 649 603"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -79,28 +101,15 @@ export function Blockchain() {
             <stop stopColor="#73CAFF" stopOpacity="0" offset="100%" />
           </linearGradient>
         </defs>
-        <motion.g id="container">
-          <motion.g
-            id="cube7"
-            animate={{ x: 297.76, y: 443.66 }}
-            initial={{ x: 297.76, y: 443.66 }}
-            transform="translate(297.76, 443.66)"
-            fill="#911C81"
-            fillRule="nonzero"
-          >
-            <path
-              d="M0.0663384048,45.657 C1.6533384,44.384 3.3413384,43.244 5.1143384,42.247 C8.4573384,40.062 13.4393384,37.046 19.8623384,33.112 C32.6883384,25.265 51.2393384,14.075 74.0283384,0.328 L74.5743384,0 L75.2083384,0.262 L137.131338,26.205 L137.874338,26.511 L138.048338,27.298 L158.609338,112.273 L158.915338,113.497 L157.822338,114.131 L83.2053384,158.17 L82.5063384,158.563 L81.7633384,158.257 L20.0153384,131.768 L19.3823384,131.506 L19.2513384,130.872 C13.1113384,104.645 8.1953384,83.423 4.8733384,68.649 C3.2133384,61.262 1.9463384,55.535 1.1373384,51.58 C0.606338405,49.604 0.248338405,47.585 0.0663384048,45.547 C0.829338405,47.447 1.4353384,49.406 1.8803384,51.405 C2.9293384,55.273 4.4153384,60.956 6.2503384,68.299 C10.0083384,82.986 15.3183384,104.186 21.7423384,130.26 L20.9773384,129.364 L82.9653384,155.328 L81.5453384,155.328 L156.031338,111.114 L155.244338,112.972 C148.099338,83.183 141.304338,54.399 134.968338,28.172 L135.885338,29.265 L74.1813384,2.798 L75.3613384,2.798 C52.3973384,16.195 33.6503384,27.058 20.6053384,34.51 C14.0503384,38.248 8.9813384,41.067 5.4853384,43.034 C3.7633384,44.073 1.9493384,44.951 0.0663384048,45.657 Z"
-              id="Path"
-            />
-            <path
-              d="M82.3093384,156.990077 C81.8503384,157.099 79.4033384,148.772 75.7543384,135.265 C72.1053384,121.758 67.4733384,102.984 62.4703384,82.243 C61.6613384,78.855 60.8533384,75.533 60.0883384,72.364 L61.0713384,73.523 C43.5913384,66.07 28.2963384,59.317 17.3723384,54.333 C6.4473384,49.35 -0.107661595,46.159 0.00133840483,45.744 C0.110338405,45.329 7.0583384,47.93 18.2463384,52.301 C29.4333384,56.672 45.1653384,63.141 62.6443384,70.419 L63.4313384,70.747 L63.6283384,71.578 C64.3923384,74.725 65.2013384,78.134 66.0093384,81.434 C71.0133384,102.175 75.3613384,121.015 78.3553384,134.697 C81.3483384,148.378 82.8563384,156.88 82.3093384,156.990077 Z"
-              id="Path"
-            />
-            <path
-              d="M61.9023384,71.883 C61.4213384,71.075 77.7433384,60.54 98.3253384,48.345 C118.908338,36.149 136.038338,26.948 136.519338,27.757 C136.999338,28.565 120.678338,39.1 100.073338,51.295 C79.4693384,63.491 62.3823384,72.779 61.9023384,71.883 Z"
-              id="Path"
-            />
-          </motion.g>
+        <motion.g
+          id="container"
+          animate={{
+            rotateZ: ['0deg', '4deg', '2deg', '0deg', '-2deg'],
+            z: [0, -6, 4],
+          }}
+          initial={{ rotateZ: '0deg', z: 0 }}
+          transition={transition}
+        >
           <motion.g
             id="cube6"
             animate={{ y: [358, 344, 351] }}
@@ -139,8 +148,9 @@ export function Blockchain() {
           </motion.g>
           <motion.g
             id="cube5"
-            animate={{ x: 486, y: 337 }}
+            animate={{ y: [337, 324] }}
             initial={{ x: 486, y: 337, opacity: 0.87 }}
+            transition={transition}
             transform="translate(486, 337)"
             opacity="0.87"
           >
@@ -167,7 +177,7 @@ export function Blockchain() {
           </motion.g>
           <motion.g
             id="cube4"
-            animate={{ x: 265, y: [233, 247, 240] }}
+            animate={{ y: [233, 247, 240] }}
             initial={{ x: 265, y: 240, opacity: 0.87 }}
             transition={transition}
             transform="translate(265, 240)"
@@ -202,7 +212,7 @@ export function Blockchain() {
           </motion.g>
           <motion.g
             id="line5"
-            animate={{ x: 302.58, y: [138.37, 152.37, 145.37] }}
+            animate={{ y: [138.37, 152.37, 145.37] }}
             initial={{ x: 302.58, y: 145.37 }}
             transform="translate(302.58, 145.37)"
             transition={transition}
@@ -221,8 +231,9 @@ export function Blockchain() {
           </motion.g>
           <motion.g
             id="cube3"
-            animate={{ x: 195, y: 0 }}
+            animate={{ x: [195, 209] }}
             initial={{ x: 195, y: 0, opacity: 0.87 }}
+            transition={transition}
             transform="translate(195, 0)"
             opacity="0.87"
           >
@@ -249,8 +260,9 @@ export function Blockchain() {
           </motion.g>
           <motion.g
             id="line8"
-            animate={{ x: 528.98, y: 246.24 }}
+            animate={{ y: [246.24, 232.24] }}
             initial={{ x: 528.98, y: 246.24 }}
+            transition={transition}
             transform="translate(528.98, 246.24)"
             fillRule="nonzero"
           >
@@ -267,7 +279,7 @@ export function Blockchain() {
           </motion.g>
           <motion.g
             id="line7"
-            animate={{ x: 106.6, y: [265.89, 251.89, 258.89] }}
+            animate={{ y: [265.89, 251.89, 258.89] }}
             initial={{ x: 106.6, y: 258.89 }}
             transform="translate(106.60, 258.89)"
             transition={transition}
@@ -286,7 +298,7 @@ export function Blockchain() {
           </motion.g>
           <motion.g
             id="line6"
-            animate={{ x: 186.66, y: [445.2, 431.2, 438.2] }}
+            animate={{ y: [445.2, 431.2] }}
             initial={{ x: 186.66, y: 438.2, originY: 'left' }}
             transition={transition}
             transform="translate(186.66, 438.20)"
@@ -306,9 +318,8 @@ export function Blockchain() {
           <motion.g
             id="line4"
             animate={{
-              x: 217.94,
               y: [333.61, 347.61, 340.61],
-              rotateZ: [-4, 4, 0],
+              rotateZ: [-3.5, 3.5, 0],
             }}
             initial={{ x: 217.94, y: 340.61, originZ: 'left' }}
             transition={transition}
@@ -328,8 +339,9 @@ export function Blockchain() {
           </motion.g>
           <motion.g
             id="line3"
-            animate={{ x: 143.22, y: 104.4 }}
-            initial={{ x: 143.22, y: 104.4 }}
+            animate={{ x: [143.22, 157.22], rotateZ: [-3, 2, 0] }}
+            initial={{ x: 143.22, y: 104.4, originZ: 'left' }}
+            transition={transition}
             transform="translate(143.22, 104.40)"
             fillRule="nonzero"
           >
@@ -346,8 +358,9 @@ export function Blockchain() {
           </motion.g>
           <motion.g
             id="line2"
-            animate={{ x: 439.65, y: 443.12 }}
+            animate={{ y: [443.12, 429.12] }}
             initial={{ x: 439.65, y: 443.12 }}
+            transition={transition}
             transform="translate(439.65, 443.12)"
             fillRule="nonzero"
           >
@@ -364,8 +377,9 @@ export function Blockchain() {
           </motion.g>
           <motion.g
             id="line1"
-            animate={{ x: 374.59, y: 329.16 }}
-            initial={{ x: 374.59, y: 329.16 }}
+            animate={{ y: [322.16, 336.16, 329.16], rotateZ: [4, -2, 0] }}
+            initial={{ x: 374.59, y: 329.16, originZ: 'right' }}
+            transition={transition}
             transform="translate(374.59, 329.16)"
             fillRule="nonzero"
           >
@@ -382,8 +396,9 @@ export function Blockchain() {
           </motion.g>
           <motion.g
             id="cube2"
-            animate={{ x: 0.85, y: 114.41 }}
+            animate={{ x: [0.85, 14.85], y: [114.41, 107.41] }}
             initial={{ x: 0.85, y: 114.41 }}
+            transition={transition}
             transform="translate(0.85, 114.41)"
             fill="#911C81"
             fillRule="nonzero"
@@ -403,8 +418,9 @@ export function Blockchain() {
           </motion.g>
           <motion.g
             id="cube1"
-            animate={{ x: 435.18, y: 93.95 }}
+            animate={{ y: [93.95, 79.95] }}
             initial={{ x: 435.18, y: 93.95 }}
+            transition={transition}
             transform="translate(435.18, 93.95)"
             fill="#911C81"
             fillRule="nonzero"
@@ -419,6 +435,28 @@ export function Blockchain() {
             />
             <path
               d="M61.8153384,71.9054 C61.3343384,71.0964 77.6563384,60.5624 98.2603384,48.3884 C118.865338,36.2154 135.951338,26.9704 136.432338,27.8004 C136.913338,28.6314 120.591338,39.1214 100.030338,51.2294 C79.4693384,63.3374 62.2953384,72.6264 61.8153384,71.9054 Z"
+              id="Path"
+            />
+          </motion.g>
+          <motion.g
+            id="cube7"
+            animate={{ y: [443.66, 429.66] }}
+            initial={{ x: 297.76, y: 443.66 }}
+            transition={transition}
+            transform="translate(297.76, 443.66)"
+            fill="#911C81"
+            fillRule="nonzero"
+          >
+            <path
+              d="M0.0663384048,45.657 C1.6533384,44.384 3.3413384,43.244 5.1143384,42.247 C8.4573384,40.062 13.4393384,37.046 19.8623384,33.112 C32.6883384,25.265 51.2393384,14.075 74.0283384,0.328 L74.5743384,0 L75.2083384,0.262 L137.131338,26.205 L137.874338,26.511 L138.048338,27.298 L158.609338,112.273 L158.915338,113.497 L157.822338,114.131 L83.2053384,158.17 L82.5063384,158.563 L81.7633384,158.257 L20.0153384,131.768 L19.3823384,131.506 L19.2513384,130.872 C13.1113384,104.645 8.1953384,83.423 4.8733384,68.649 C3.2133384,61.262 1.9463384,55.535 1.1373384,51.58 C0.606338405,49.604 0.248338405,47.585 0.0663384048,45.547 C0.829338405,47.447 1.4353384,49.406 1.8803384,51.405 C2.9293384,55.273 4.4153384,60.956 6.2503384,68.299 C10.0083384,82.986 15.3183384,104.186 21.7423384,130.26 L20.9773384,129.364 L82.9653384,155.328 L81.5453384,155.328 L156.031338,111.114 L155.244338,112.972 C148.099338,83.183 141.304338,54.399 134.968338,28.172 L135.885338,29.265 L74.1813384,2.798 L75.3613384,2.798 C52.3973384,16.195 33.6503384,27.058 20.6053384,34.51 C14.0503384,38.248 8.9813384,41.067 5.4853384,43.034 C3.7633384,44.073 1.9493384,44.951 0.0663384048,45.657 Z"
+              id="Path"
+            />
+            <path
+              d="M82.3093384,156.990077 C81.8503384,157.099 79.4033384,148.772 75.7543384,135.265 C72.1053384,121.758 67.4733384,102.984 62.4703384,82.243 C61.6613384,78.855 60.8533384,75.533 60.0883384,72.364 L61.0713384,73.523 C43.5913384,66.07 28.2963384,59.317 17.3723384,54.333 C6.4473384,49.35 -0.107661595,46.159 0.00133840483,45.744 C0.110338405,45.329 7.0583384,47.93 18.2463384,52.301 C29.4333384,56.672 45.1653384,63.141 62.6443384,70.419 L63.4313384,70.747 L63.6283384,71.578 C64.3923384,74.725 65.2013384,78.134 66.0093384,81.434 C71.0133384,102.175 75.3613384,121.015 78.3553384,134.697 C81.3483384,148.378 82.8563384,156.88 82.3093384,156.990077 Z"
+              id="Path"
+            />
+            <path
+              d="M61.9023384,71.883 C61.4213384,71.075 77.7433384,60.54 98.3253384,48.345 C118.908338,36.149 136.038338,26.948 136.519338,27.757 C136.999338,28.565 120.678338,39.1 100.073338,51.295 C79.4693384,63.491 62.3823384,72.779 61.9023384,71.883 Z"
               id="Path"
             />
           </motion.g>
