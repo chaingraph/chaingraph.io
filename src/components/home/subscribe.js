@@ -3,9 +3,15 @@ import { Flex, Box } from 'rebass'
 import { GlobalContainer } from 'store'
 import { checkValidity, updateObject } from 'utils/utility'
 import { Input, Button, Icon } from 'components/UI'
+import { SubscriptionContainer } from 'store'
+import { IconSpinner } from 'components/UI/icon'
 
 export function Subscribe() {
   const { user_theme } = GlobalContainer.useContainer()
+  const {
+    sendSubscriptionRequest,
+    s_loading,
+  } = SubscriptionContainer.useContainer()
   const [email, setEmail] = useState({
     elementType: 'email',
     elementConfig: {
@@ -45,6 +51,8 @@ export function Subscribe() {
 
   function sendEmailHandler(e) {
     e.preventDefault()
+
+    return sendSubscriptionRequest(email.value, {}, true)
   }
 
   return (
@@ -74,7 +82,7 @@ export function Subscribe() {
           icon
           disabled={!emailValid}
         >
-          <Icon.arrowRight size="32px" />
+          {s_loading ? <IconSpinner /> : <Icon.arrowRight size="32px" />}
         </Button.SecondaryBtn>
       </Box>
     </Flex>

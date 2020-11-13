@@ -50,11 +50,7 @@ Layout.propTypes = {
 }
 
 export default ({ children }) => (
-  <GlobalContainer.Provider
-    initState={{
-      ...globalState,
-    }}
-  >
+  <GlobalContainer.Provider initState={{ ...globalState }}>
     <Layout>{children}</Layout>
   </GlobalContainer.Provider>
 )

@@ -5,7 +5,6 @@ import { Blockchain } from './blockchain'
 import { Flex, Text, Box } from 'rebass'
 import { Features } from './features'
 import { Subscribe } from './subscribe'
-import styled from 'utils/styles'
 
 export function Home() {
   const titleHero = 'one graph for all chains'

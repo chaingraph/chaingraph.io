@@ -6,6 +6,7 @@ import {
   AiOutlinePlus,
   AiOutlineMinus,
   AiOutlineSearch,
+  AiOutlineLoading,
 } from 'react-icons/ai'
 import {
   FiArrowLeftCircle,
@@ -110,6 +111,7 @@ export const Icon = {
   menu: (props) => <FiMenu {...props} />,
   light: (props) => <FiSun {...props} />,
   dark: (props) => <FiMoon {...props} />,
+  loading: (props) => <AiOutlineLoading {...props} />,
 }
 
 export const SvgIcon = ({ icon, size, color }) => (
@@ -117,6 +119,38 @@ export const SvgIcon = ({ icon, size, color }) => (
     <ReactSVG src={`/icons/${icon}.svg`} />
   </SvgIconContainer>
 )
+
+export const IconSpinner = () => {
+  const initAnim = {
+    rotateZ: 0,
+  }
+  const mStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    transformOrigin: 'center',
+  }
+  const SpinnerAnim = {
+    rotateZ: [0, 360],
+  }
+  const transition = {
+    repeat: Infinity,
+    duration: 0.75,
+    type: 'spring',
+    stiffness: 144,
+  }
+
+  return (
+    <motion.span
+      animate={SpinnerAnim}
+      initial={initAnim}
+      transition={transition}
+      style={mStyle}
+    >
+      <Icon.loading size="32px" />
+    </motion.span>
+  )
+}
 
 export const SocialIcons = ({ mb }) => (
   <Flex

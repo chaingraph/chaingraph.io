@@ -1,3 +1,12 @@
+/*
+<!-- Begin Mailchimp Signup Form -->
+action="https://chaingraph.us7.list-manage.com/subscribe/post?u=4af32066e399ee7edd899e989&amp;id=b0a7dea46e"
+method="post"
+*/
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: 'ChainGraph.io',
@@ -26,6 +35,12 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: process.env.MAILCHIMP_ENDPOINT,
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

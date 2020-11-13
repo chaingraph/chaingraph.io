@@ -9,6 +9,7 @@
     "@emotion/styled": "^10.0.27",
     "@styled-system/theme-get": "^5.1.2",
     "aos": "^2.3.4",
+    "dotenv": "^8.2.0",
     "emotion-theming": "^10.0.27",
     "framer-motion": "^2.9.4",
     "gatsby": "^2.21.37",
