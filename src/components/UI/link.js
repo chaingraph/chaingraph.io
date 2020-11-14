@@ -44,6 +44,7 @@ export function Link({
   logo = false,
   header = false,
   to = '#',
+  target = '',
   ...rest
 }) {
   const { user_theme } = GlobalContainer.useContainer()
@@ -90,6 +91,7 @@ export function Link({
             opacity: 0.833,
           }}
           to={to}
+          target={target}
           getProps={({ isCurrent }) => {
             if (isCurrent) {
               active.current = isCurrent && header

@@ -28,7 +28,7 @@ export function NavigationItems({ mobile = false }) {
             />
           </Link>
         </HeaderLogoContainer>
-        <Link header mobile={mobile} fontSize={4} ml={5}>
+        <Link to="/#beta" header mobile={mobile} fontSize={4} ml={5}>
           Beta
         </Link>
         <Link to="/#features" header mobile={mobile} fontSize={4} ml={5}>
@@ -38,7 +38,14 @@ export function NavigationItems({ mobile = false }) {
       {user_theme ? (
         <HeaderLinkCircle mobile={mobile} userTheme={user_theme}>
           <div className="circle" />
-          <Link header mobile={mobile} fontSize={4} ml={5}>
+          <Link
+            to="https://github.com/chaingraph"
+            target="__blank"
+            header
+            mobile={mobile}
+            fontSize={4}
+            ml={5}
+          >
             Join github
           </Link>
         </HeaderLinkCircle>

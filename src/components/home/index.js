@@ -36,7 +36,7 @@ export function Home() {
         </ContentWrapper>
         <Blockchain />
       </Flex>
-      <ContentWrapper>
+      <ContentWrapper id="beta">
         <Text as="p" fontSize={[3, 4, 4, 4, 5]} fontWeight="medium" mb={4}>
           {titleSubscribe}
         </Text>

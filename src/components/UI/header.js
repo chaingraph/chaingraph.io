@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { Flex } from 'rebass'
 import { GlobalContainer } from 'store'
@@ -47,12 +46,4 @@ export function Header({ mobileMenu }) {
       </Flex>
     </HeaderComponent>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: '',
 }
