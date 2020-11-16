@@ -1,8 +1,3 @@
-/*
-<!-- Begin Mailchimp Signup Form -->
-action="https://chaingraph.us7.list-manage.com/subscribe/post?u=4af32066e399ee7edd899e989&amp;id=b0a7dea46e"
-method="post"
-*/
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })

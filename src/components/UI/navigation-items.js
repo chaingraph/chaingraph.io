@@ -40,6 +40,7 @@ export function NavigationItems({ mobile = false }) {
           <div className="circle" />
           <Link
             to="https://github.com/chaingraph"
+            external
             target="__blank"
             header
             mobile={mobile}

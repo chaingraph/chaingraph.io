@@ -11,11 +11,11 @@ export const useSubscriptionStore = () => {
   const [state, dispatch] = useReducer(subscriptionReducer, subscribeState)
   const { modalOpen, msg: message, loading: s_loading, error: s_error } = state
 
-  async function sendSubscriptionRequest(
+  const sendSubscriptionRequest = async (
     email,
     opt = {},
     active_debug = false,
-  ) {
+  ) => {
     const {
       subscriptionStart,
       subscriptionSuccess,
@@ -57,7 +57,7 @@ export const useSubscriptionStore = () => {
     }
   }
 
-  function modalConfirm(active_debug = false) {
+  const modalConfirm = (active_debug = false) => {
     const { modalControl } = actions
     active_debug === true && debug(at.MODAL_CONTROL, { modalOpen: false })
 

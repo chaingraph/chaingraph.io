@@ -1,35 +1,20 @@
 import * as at from './action-types'
 
-function subscriptionStart() {
-  return {
-    type: at.ADD_SUBSCRIPTION_START,
-  }
-}
+export const subscriptionStart = () => ({
+  type: at.ADD_SUBSCRIPTION_START,
+})
 
-function subscriptionSuccess(msg) {
-  return {
-    type: at.ADD_SUBSCRIPTION_SUCCESS,
-    msg,
-  }
-}
+export const subscriptionSuccess = (msg) => ({
+  type: at.ADD_SUBSCRIPTION_SUCCESS,
+  msg,
+})
 
-function subscriptionFail(error) {
-  return {
-    type: at.ADD_SUBSCRIPTION_FAIL,
-    error,
-  }
-}
+export const subscriptionFail = (error) => ({
+  type: at.ADD_SUBSCRIPTION_FAIL,
+  error,
+})
 
-function modalControl(state = false) {
-  return {
-    type: at.MODAL_CONTROL,
-    modalOpen: state,
-  }
-}
-
-export {
-  subscriptionStart,
-  subscriptionSuccess,
-  subscriptionFail,
-  modalControl,
-}
+export const modalControl = (state = false) => ({
+  type: at.MODAL_CONTROL,
+  modalOpen: state,
+})

@@ -32,7 +32,7 @@ const BlockchainWrapper = styled(Box)`
   }
 `
 
-export function Blockchain() {
+export const Blockchain = () => {
   const transition = {
     repeat: Infinity,
     duration: 10,

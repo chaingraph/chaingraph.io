@@ -30,6 +30,31 @@ const LinkContainer = styled(GatsbyLink)`
   }
 `
 
+const ExternalLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.833;
+  }
+
+  + div {
+    background-color: ${({ usertheme }) =>
+    usertheme === 'light' ? '#111' : '#fafafa'};
+    height: 2px;
+    width: 0%;
+    opacity: 0;
+    float: left;
+    left: 0;
+    position: absolute;
+    display: ${({ mobile }) => (mobile ? 'block' : 'none')};
+
+    @media screen and (min-width: ${themeGet('breakpoints.0')}) {
+      display: block;
+    }
+  }
+`
+
 const LinkWrapper = styled(motion.div)`
   display: ${({ mobile }) => (mobile ? 'initial' : 'none')};
 
@@ -45,6 +70,7 @@ export function Link({
   header = false,
   to = '#',
   target = '',
+  external = false,
   ...rest
 }) {
   const { user_theme } = GlobalContainer.useContainer()
@@ -86,22 +112,33 @@ export function Link({
         style={{ position: 'relative' }}
         {...rest}
       >
-        <LinkContainer
-          activeStyle={{
-            opacity: 0.833,
-          }}
-          to={to}
-          target={target}
-          getProps={({ isCurrent }) => {
-            if (isCurrent) {
-              active.current = isCurrent && header
-            }
-          }}
-          usertheme={user_theme}
-          mobile={mobile ? 1 : 0}
-        >
-          {children}
-        </LinkContainer>
+        {external ? (
+          <ExternalLink
+            href={to}
+            target={target}
+            usertheme={user_theme}
+            mobile={mobile ? 1 : 0}
+          >
+            {children}
+          </ExternalLink>
+        ) : (
+          <LinkContainer
+            activeStyle={{
+              opacity: 0.833,
+            }}
+            to={to}
+            target={target}
+            getProps={({ isCurrent }) => {
+              if (isCurrent) {
+                active.current = isCurrent && header
+              }
+            }}
+            usertheme={user_theme}
+            mobile={mobile ? 1 : 0}
+          >
+            {children}
+          </LinkContainer>
+        )}
         {(header || active.current) && (
           <motion.div
             animate={!active.current && revealX}
