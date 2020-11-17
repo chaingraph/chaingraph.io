@@ -5,7 +5,6 @@ import { Blockchain } from './blockchain'
 import { Flex, Text, Box } from 'rebass'
 import { Features } from './features'
 import { Subscribe } from './subscribe'
-import styled from 'utils/styles'
 
 export function Home() {
   const titleHero = 'one graph for all chains'
@@ -37,7 +36,7 @@ export function Home() {
         </ContentWrapper>
         <Blockchain />
       </Flex>
-      <ContentWrapper>
+      <ContentWrapper id="beta">
         <Text as="p" fontSize={[3, 4, 4, 4, 5]} fontWeight="medium" mb={4}>
           {titleSubscribe}
         </Text>

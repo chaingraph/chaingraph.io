@@ -39,3 +39,13 @@ export const getColors = (pallete, component, key) => {
   const theme_key = key !== '' ? key : 'default'
   return themeGet(`colors.${pallete}.${component}.${theme_key}`)
 }
+
+export const debug = (type, value) => {
+  if (process.env.NODE_ENV === 'development') {
+    // eslint-disable-next-line no-console
+    console.log('||| ACTION_EXECUTED |||\n———————————————————————\n', {
+      type,
+      ...value,
+    })
+  }
+}
