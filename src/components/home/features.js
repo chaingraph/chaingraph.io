@@ -9,7 +9,7 @@ export function Features() {
   const { user_theme } = GlobalContainer.useContainer()
 
   const featuresSub =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis enim facilisis condimentum sit mus egestas. Pellentesque mollis vitae, massa vulputate viverra in faucibus. Lorem mi nisi tellus orci, lobortis. Nibh elit ultricies placerat justo, hendrerit eu egestas.'
+    'ChainGraph is an open source decentralized network of GraphQL API nodes for blockchain applications that provides state of art subscription, filtering, sorting, aggregation, pagination and search capabilities.'
   const features = [
     {
       icon: 'feat1',
@@ -26,6 +26,22 @@ export function Features() {
     {
       icon: 'feat4',
       body: 'Semantic and principled graphql.',
+    },
+    {
+      icon: 'feat1',
+      body: 'No vendor lock. Open Source.',
+    },
+    {
+      icon: 'feat2',
+      body: 'ChainGraph CLI.',
+    },
+    {
+      icon: 'feat3',
+      body: 'dApp starters.',
+    },
+    {
+      icon: 'feat4',
+      body: 'Push through guarantees on RPC APIs.',
     },
   ]
 
