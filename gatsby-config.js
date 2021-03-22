@@ -5,9 +5,8 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'ChainGraph.io',
-    description:
-      'Blockchain real-time data without any hassle. ChainGraph provides reliable real-time graphql APIs for blockchain applications.',
-    author: '@AndlerRL',
+    description: 'Blockchain real-time data without any hassle.',
+    author: '@chaingraph_io',
   },
   plugins: [
     'gatsby-plugin-netlify-cms',
