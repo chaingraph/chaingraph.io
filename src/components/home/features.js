@@ -16,6 +16,10 @@ export function Features() {
       body: 'Read data from multiple blockchains.',
     },
     {
+      icon: 'feat1',
+      body: 'No vendor lock. Diverse API providers.',
+    },
+    {
       icon: 'feat2',
       body: 'Mobile first optimized queries.',
     },
@@ -24,16 +28,8 @@ export function Features() {
       body: 'Push through guarantees on RPC APIs.',
     },
     {
-      icon: 'feat1',
-      body: 'No vendor lock. Diverse API providers.',
-    },
-    {
       icon: 'feat4',
       body: 'Semantic and principled graphql.',
-    },
-    {
-      icon: 'feat3',
-      body: 'Faster time to market. Focus on features not infrastructure.',
     },
     {
       icon: 'feat2',
@@ -41,7 +37,11 @@ export function Features() {
     },
     {
       icon: 'feat3',
-      body: 'Performant historical transaction data queries',
+      body: 'Faster time to market. Focus on features not the infrastructure.',
+    },
+    {
+      icon: 'feat3',
+      body: 'Performant transaction data queries',
     },
   ]
 

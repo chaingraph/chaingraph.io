@@ -34,7 +34,7 @@ const GlobalStyles = ({ userTheme }) => (
         -webkit-text-size-adjust: 100%;
       }
       body {
-        margin: 0;
+        margin: 30px;
         padding: 0;
         background-color: ${userTheme === 'light' ? '#fff' : '#151325'};
         color: ${userTheme === 'light' ? '#111' : '#fafafa'};

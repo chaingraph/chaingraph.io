@@ -10,7 +10,7 @@ export function Home() {
   const titleHero = 'one graph for all chains'
   const heroSub =
     'Blockchain real-time data without any hassle. ChainGraph provides reliable real-time graphql APIs for blockchain applications.'
-  const titleSubscribe = 'Get early access to beta release.'
+  const titleSubscribe = 'Get early access to the beta release.'
 
   return (
     <React.Fragment>
