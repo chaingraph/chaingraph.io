@@ -49,10 +49,15 @@ export function Subscribe() {
     setEmailValid(isValid)
   }
 
-  function sendEmailHandler(e) {
+  async function sendEmailHandler(e) {
     e.preventDefault()
 
-    return sendSubscriptionRequest(email.value, {}, true)
+    await sendSubscriptionRequest(email.value, {}, true)
+
+    setTimeout(() => {
+      // eslint-disable-next-line no-alert
+      alert('subscribed!')
+    }, 500)
   }
 
   return (

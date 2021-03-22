@@ -20,28 +20,28 @@ export function Features() {
       body: 'Mobile first optimized queries.',
     },
     {
-      icon: 'feat3',
-      body: 'Faster time to market.',
+      icon: 'feat4',
+      body: 'Push through guarantees on RPC APIs.',
+    },
+    {
+      icon: 'feat1',
+      body: 'No vendor lock. Diverse API providers.',
     },
     {
       icon: 'feat4',
       body: 'Semantic and principled graphql.',
     },
     {
-      icon: 'feat1',
-      body: 'No vendor lock. Open Source.',
+      icon: 'feat3',
+      body: 'Faster time to market. Focus on features not infrastructure.',
     },
     {
       icon: 'feat2',
-      body: 'ChainGraph CLI.',
+      body: 'ChainGraph CLI and client app starters',
     },
     {
       icon: 'feat3',
-      body: 'dApp starters.',
-    },
-    {
-      icon: 'feat4',
-      body: 'Push through guarantees on RPC APIs.',
+      body: 'Performant historical transaction data queries',
     },
   ]
 
