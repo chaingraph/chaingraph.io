@@ -52,6 +52,11 @@ export function SEO({ description, lang, meta, title }) {
           content: 'website',
         },
         {
+          property: 'og:image',
+          content:
+            'https://chaingraph.io/images/chaingraph-logo-white-large.png',
+        },
+        {
           name: 'twitter:card',
           content: 'summary',
         },
