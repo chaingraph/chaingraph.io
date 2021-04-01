@@ -41,7 +41,7 @@ export function Subscribe() {
 
     for (const inputIds in updatedEmail) {
       if (inputIds) {
-        isValid = email.validation.valid && isValid
+        isValid = updatedEmail.validation.valid && isValid
       }
     }
 

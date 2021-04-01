@@ -65,12 +65,12 @@ export function Features() {
       mb={6}
       id="features"
     >
-      <Title as="h1" fontSize={[6, 6, 6, 6, 7]} mb={[3, 4, 4, 4, 5]}>
+      <Title as="h1" fontSize={[5, 5, 5, 5, 6]} mb={[3, 4, 4, 4, 5]}>
         Features
       </Title>
       <Text
         maxWidth={1200}
-        fontSize={4}
+        fontSize={3}
         fontWeight="light"
         lineHeight={3}
         textAlign="center"

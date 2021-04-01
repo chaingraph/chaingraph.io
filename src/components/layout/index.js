@@ -35,8 +35,8 @@ const Layout = ({ children }) => {
       <MobileMenu active={mobMenu} setActive={setMobMenu}>
         <NavigationItems mobile />
       </MobileMenu>
-      <Box mt={4}>
-        <Box as="main" maxWidth="1600px" mx="auto" px={3}>
+      <Box mt={4} width={1}>
+        <Box as="main" maxWidth="1440px" mx="auto" px={3}>
           {children}
         </Box>
         <Footer userTheme={user_theme} />

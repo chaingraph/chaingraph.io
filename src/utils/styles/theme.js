@@ -34,13 +34,14 @@ const colors = {
   cards: {
     light: {
       default:
-        'linear-gradient(180deg, #0E144A 100%, rgba(70, 68, 87, 0) 100%)',
-      active: 'linear-gradient(180deg, #2CD5C4 100%, rgba(70, 68, 87, 0) 100%)',
-      color: '#fff',
+        'linear-gradient(180deg, #fff 100%, rgba(255, 255, 255, 0) 100%)',
+      active:
+        'linear-gradient(180deg, #D7DBF1 0%, rgba(255, 255, 255, 0) 100%)',
+      color: '#0E144A',
     },
     dark: {
-      default: 'linear-gradient(180deg, #524F67 0%, rgba(70, 68, 87, 0) 100%)',
-      active: 'linear-gradient(180deg, #2CD5C4 0%, rgba(70, 68, 87, 0) 100%)',
+      default: 'linear-gradient(180deg, #151325 0%, rgba(70, 68, 87, 0) 100%)',
+      active: 'linear-gradient(180deg, #211E3E 0%, rgba(70, 68, 87, 0) 100%)',
       color: '#fff',
     },
   },
@@ -64,13 +65,13 @@ const colors = {
     },
     background: {
       default: '#333145',
-      light: '',
-      dark: '',
+      light: '#F9F9F9',
+      dark: '#333145',
     },
     success: {
       default: '#388e3c',
-      light: '',
-      dark: '',
+      light: '#F9F9F9',
+      dark: '#333145',
     },
     warning: {
       default: '#fff176',

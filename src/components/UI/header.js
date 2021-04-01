@@ -22,7 +22,7 @@ export function Header({ mobileMenu }) {
       <Flex
         justifyContent="space-between"
         alignItems="center"
-        maxWidth="1600px"
+        maxWidth="1440px"
         height={[72, 108]}
         width={1}
         p={3}

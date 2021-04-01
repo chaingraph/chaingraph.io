@@ -37,7 +37,7 @@ export function Footer() {
         justifyContent="space-between"
         flexDirection="column"
         alignItems="center"
-        maxWidth="1600px"
+        maxWidth="1440px"
         mx="auto"
       >
         <Box as="figure" maxWidth="820px" mb={5} width={1}>

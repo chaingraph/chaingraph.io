@@ -20,13 +20,13 @@ export function Home() {
         justifyContent="space-between"
         flexWrap="wrap"
       >
-        <ContentWrapper>
-          <Title as="h1" fontSize={[7, 7, 7, 7, 8]} mb={[3, 4, 4, 4, 5]}>
+        <ContentWrapper mb={[3, 0, 0]}>
+          <Title as="h1" fontSize={[6, 6, 6, 6, 7]} mb={[3, 4, 4, 4, 5]}>
             {titleHero}
           </Title>
           <Text
             as="p"
-            fontSize={[3, 4, 4, 4, 5]}
+            fontSize={[2, 3, 3, 3, 4]}
             fontWeight="light"
             lineHeight={3}
             maxWidth={670}

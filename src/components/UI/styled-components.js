@@ -125,7 +125,7 @@ const ThemeBtnWrapper = styled.span`
 
 const ContentWrapper = ({ children, ...rest }) => {
   return (
-    <Box p={[4, 4, 0]} width={[1, 1, 1 / 2]} maxWidth={720} {...rest}>
+    <Box p={[0, 4, 0]} width={[1, 1, 1 / 2]} maxWidth={720} {...rest}>
       {children}
     </Box>
   )
@@ -140,8 +140,12 @@ const Grid = styled(Box)`
   grid-template-columns: repeat(1, 1fr);
   display: grid;
 
-  @media (min-width: ${themeGet('breakpoints.1')}) {
+  @media (min-width: ${themeGet('breakpoints.0')}) {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: ${themeGet('breakpoints.2')}) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media (min-width: ${themeGet('breakpoints.3')}) {

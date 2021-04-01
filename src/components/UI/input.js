@@ -7,6 +7,8 @@ import { GlobalContainer } from 'store'
 import { Flex } from 'rebass'
 
 const InputWrapper = styled(Flex)`
+  position: relative;
+
   input,
   textarea,
   select {
@@ -14,11 +16,23 @@ const InputWrapper = styled(Flex)`
     padding: ${themeGet('space.3')} ${themeGet('space.4')};
     border-radius: 47px;
     border: 3px solid
-      ${({ success }) =>
-    getColors('input', success ? 'success' : 'background', '')};
-    background-color: ${getColors('input', 'background', '')};
+      ${({ success, userTheme }) =>
+    getColors('input', success ? 'success' : 'background', userTheme)};
+    background-color: ${({ userTheme }) =>
+    getColors('input', 'background', userTheme)};
     transition: border-color 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 25ms;
-    color: #f5f5f5;
+    color: ${({ userTheme }) =>
+    userTheme === 'dark'
+      ? getColors('main', 'white', '200')
+      : getColors('main', 'black', '400')};
+
+    &::placeholder {
+      color: ${({ userTheme }) =>
+    userTheme === 'dark'
+      ? getColors('main', 'white', '200')
+      : getColors('main', 'black', '400')};
+      opacity: 0.4;
+    }
 
     &:hover,
     &:focus {
@@ -29,6 +43,8 @@ const InputWrapper = styled(Flex)`
 `
 
 const Error = styled.span`
+  position: absolute;
+  top: 64px;
   color: ${getColors('input', 'error', '')};
   font-size: ${themeGet('fontSizes.2')};
   padding-left: ${themeGet('space.3')};
