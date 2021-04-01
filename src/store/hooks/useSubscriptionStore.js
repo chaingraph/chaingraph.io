@@ -9,7 +9,13 @@ import addToMailchimp from 'gatsby-plugin-mailchimp'
 
 export const useSubscriptionStore = () => {
   const [state, dispatch] = useReducer(subscriptionReducer, subscribeState)
-  const { modalOpen, msg: message, loading: s_loading, error: s_error } = state
+  const {
+    modalOpen,
+    msg: message,
+    loading: s_loading,
+    error: s_error,
+    title,
+  } = state
 
   const sendSubscriptionRequest = async (
     email,
@@ -53,7 +59,7 @@ export const useSubscriptionStore = () => {
       active_debug === true &&
         debug(at.ADD_SUBSCRIPTION_FAIL, { catch: true, error })
 
-      dispatch(subscriptionFail(error))
+      dispatch(subscriptionFail(error, 'Error'))
     }
   }
 
@@ -61,7 +67,7 @@ export const useSubscriptionStore = () => {
     const { modalControl } = actions
     active_debug === true && debug(at.MODAL_CONTROL, { modalOpen: false })
 
-    modalControl(false)
+    dispatch(modalControl(false))
   }
 
   return {
@@ -71,5 +77,6 @@ export const useSubscriptionStore = () => {
     msg: message,
     s_loading,
     s_error,
+    title,
   }
 }

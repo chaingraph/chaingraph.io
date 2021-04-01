@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Flex, Box } from 'rebass'
+import { Flex, Box, Text } from 'rebass'
 import { GlobalContainer } from 'store'
 import { checkValidity, updateObject } from 'utils/utility'
-import { Input, Button, Icon } from 'components/UI'
+import { Input, Button, Icon, Modal } from 'components/UI'
 import { SubscriptionContainer } from 'store'
 import { IconSpinner } from 'components/UI/icon'
 
@@ -11,6 +11,10 @@ export function Subscribe() {
   const {
     sendSubscriptionRequest,
     s_loading,
+    modalConfirm,
+    modalOpen,
+    title,
+    msg,
   } = SubscriptionContainer.useContainer()
   const [email, setEmail] = useState({
     elementType: 'email',
@@ -53,43 +57,50 @@ export function Subscribe() {
     e.preventDefault()
 
     await sendSubscriptionRequest(email.value, {}, true)
-
-    setTimeout(() => {
-      // eslint-disable-next-line no-alert
-      alert('subscribed!')
-    }, 500)
   }
 
   return (
-    <Flex
-      as="form"
-      justifyContent="space-between"
-      alignItems="center"
-      width={1}
-      onSubmit={sendEmailHandler}
-      mb={6}
-    >
-      <Box width={9 / 12}>
-        <Input
-          {...email}
-          {...email.elementConfig}
-          elementType={email.elementType}
-          shouldValidate={email.validation}
-          changed={(e) => onChangeHandler(e, 'email')}
-          invalid={!email.validation.valid}
-          touched={email.validation.touched}
+    <React.Fragment>
+      <Flex
+        as="form"
+        justifyContent="space-between"
+        alignItems="center"
+        width={1}
+        onSubmit={sendEmailHandler}
+        mb={6}
+      >
+        <Box width={9 / 12}>
+          <Input
+            {...email}
+            {...email.elementConfig}
+            elementType={email.elementType}
+            shouldValidate={email.validation}
+            changed={(e) => onChangeHandler(e, 'email')}
+            invalid={!email.validation.valid}
+            touched={email.validation.touched}
+          />
+        </Box>
+        <Box width={2 / 12}>
+          <Button.SecondaryBtn
+            type="submit"
+            userTheme={user_theme}
+            icon
+            disabled={!emailValid}
+          >
+            {s_loading ? <IconSpinner /> : <Icon.arrowRight size="32px" />}
+          </Button.SecondaryBtn>
+        </Box>
+      </Flex>
+      <Modal show={modalOpen} modalClosed={modalConfirm}>
+        <Text as="h2" sx={{ textTransform: 'uppercase' }} mb={4}>
+          {title}
+        </Text>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: msg,
+          }}
         />
-      </Box>
-      <Box width={2 / 12}>
-        <Button.SecondaryBtn
-          type="submit"
-          userTheme={user_theme}
-          icon
-          disabled={!emailValid}
-        >
-          {s_loading ? <IconSpinner /> : <Icon.arrowRight size="32px" />}
-        </Button.SecondaryBtn>
-      </Box>
-    </Flex>
+      </Modal>
+    </React.Fragment>
   )
 }

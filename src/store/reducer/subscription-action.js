@@ -16,16 +16,19 @@ const start = (state, action) =>
     loading: true,
   })
 
-const fail = (state, { error }) =>
+const fail = (state, { msg, title }) =>
   updateObject(state, {
-    error,
+    error: true,
     loading: false,
+    msg,
+    title,
   })
 
-const subscriptionSuccess = (state, { msg }) =>
+const subscriptionSuccess = (state, { msg, title }) =>
   updateObject(state, {
     loading: false,
     msg,
+    title,
   })
 
 const modalControl = (state, { modalOpen }) => {
@@ -38,6 +41,7 @@ const modalControl = (state, { modalOpen }) => {
       error: null,
       modalOpen,
       msg: '',
+      title: '',
     }
   return updateObject(state, control)
 }
