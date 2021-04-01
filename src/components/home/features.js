@@ -16,11 +16,11 @@ export function Features() {
       body: 'Read data from multiple blockchains.',
     },
     {
-      icon: 'feat1',
+      icon: 'feat2',
       body: 'No vendor lock. Diverse API providers.',
     },
     {
-      icon: 'feat2',
+      icon: 'feat3',
       body: 'Mobile first optimized queries.',
     },
     {
@@ -28,19 +28,19 @@ export function Features() {
       body: 'Push through guarantees on RPC APIs.',
     },
     {
-      icon: 'feat4',
+      icon: 'feat5',
       body: 'Semantic and principled graphql.',
     },
     {
-      icon: 'feat2',
+      icon: 'feat6',
       body: 'ChainGraph CLI and client app starters',
     },
     {
-      icon: 'feat3',
+      icon: 'feat7',
       body: 'Faster time to market. Focus on features not the infrastructure.',
     },
     {
-      icon: 'feat3',
+      icon: 'feat8',
       body: 'Performant transaction data queries',
     },
   ]
@@ -87,10 +87,10 @@ export function Features() {
             style={initialAnim}
           >
             <CardContainer as="figure" height="66%" width={10 / 12} mx="auto">
-              <SvgIcon icon={f.icon} logo />
+              <SvgIcon icon={`${f.icon}-${user_theme}`} logo />
             </CardContainer>
             <CardContainer height="33%" width={10 / 12} mx="auto">
-              <Text as="b" textAlign="center" mx="auto" my="auto" width={1}>
+              <Text as="p" textAlign="center" mx="auto" my="auto" width={1}>
                 {f.body}
               </Text>
             </CardContainer>

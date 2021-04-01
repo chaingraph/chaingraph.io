@@ -7,6 +7,7 @@ const initState = {
   error: null,
   modalOpen: false,
   msg: '',
+  title: '',
 }
 
 const start = (state, action) =>

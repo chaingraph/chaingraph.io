@@ -40,13 +40,13 @@ export const useSubscriptionStore = () => {
         active_debug === true &&
           debug(at.ADD_SUBSCRIPTION_SUCCESS, { email, result, msg })
 
-        dispatch(subscriptionSuccess(msg))
+        dispatch(subscriptionSuccess(msg, result))
         dispatch(modalControl(true))
       } else {
         active_debug === true &&
           debug(at.ADD_SUBSCRIPTION_FAIL, { catch: false, email, result, msg })
 
-        dispatch(subscriptionFail(msg))
+        dispatch(subscriptionFail(msg, result))
         dispatch(modalControl(true))
       }
     } catch (error) {

@@ -4,14 +4,16 @@ export const subscriptionStart = () => ({
   type: at.ADD_SUBSCRIPTION_START,
 })
 
-export const subscriptionSuccess = (msg) => ({
+export const subscriptionSuccess = (msg, title) => ({
   type: at.ADD_SUBSCRIPTION_SUCCESS,
   msg,
+  title,
 })
 
-export const subscriptionFail = (error) => ({
+export const subscriptionFail = (msg, title) => ({
   type: at.ADD_SUBSCRIPTION_FAIL,
-  error,
+  msg,
+  title,
 })
 
 export const modalControl = (state = false) => ({
