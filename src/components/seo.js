@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
 export function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+  const { site, file } = useStaticQuery(
     graphql`
       query {
         site {
@@ -21,11 +21,16 @@ export function SEO({ description, lang, meta, title }) {
             author
           }
         }
+        file(name: { eq: "chaingraph-logo-white-large" }) {
+          publicURL
+          name
+        }
       }
     `,
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaThumbnail = file.publicURL
 
   return (
     <Helmet
@@ -53,8 +58,7 @@ export function SEO({ description, lang, meta, title }) {
         },
         {
           property: 'og:image',
-          content:
-            'https://chaingraph.io/images/chaingraph-logo-white-large.png',
+          content: metaThumbnail,
         },
         {
           name: 'twitter:card',
