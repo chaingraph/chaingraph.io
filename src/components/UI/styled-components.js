@@ -156,8 +156,8 @@ const Grid = styled(Box)`
 const CardWrapper = styled(motion.div)`
   width: 280px;
   height: 335px;
-  margin: ${themeGet('space.5')} auto auto;
-  border-radius: 30px;
+  position: relative;
+  z-index: 1;
   transition: fill 0.15s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 `
 const CardContainer = styled(Flex)``
