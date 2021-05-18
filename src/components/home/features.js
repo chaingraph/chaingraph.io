@@ -28,39 +28,39 @@ export function Features() {
   const { user_theme } = GlobalContainer.useContainer()
 
   const featuresSub =
-    'ChainGraph is an open source decentralized network of GraphQL API nodes for blockchain applications that provides state of art subscription, filtering, sorting, aggregation, pagination and search capabilities.'
+    'ChainGraph is a network of GraphQL API nodes for blockchain applications that provides state of art subscription, filtering, sorting, aggregation, pagination and search capabilities.'
   const features = [
     {
+      icon: 'feat5',
+      body: 'Subscriptions to real-time state and transaction data.',
+    },
+    {
       icon: 'feat1',
-      body: 'Read data from multiple blockchains.',
+      body: 'Query from multiple blockchains in one request.',
     },
     {
       icon: 'feat2',
-      body: 'No vendor lock. Diverse API providers.',
+      body: 'Powerful developer console and explorer.',
     },
     {
-      icon: 'feat3',
-      body: 'Mobile first optimized queries.',
-    },
-    {
-      icon: 'feat4',
+      icon: 'feat7',
       body: 'Push through guarantees on RPC APIs.',
     },
     {
-      icon: 'feat5',
+      icon: 'feat4',
       body: 'Semantic and principled graphql.',
     },
     {
       icon: 'feat6',
-      body: 'ChainGraph CLI and client app starters',
+      body: 'ChainGraph CLI, dApp starters and SDKs for developers.',
     },
     {
-      icon: 'feat7',
-      body: 'Faster time to market. Focus on features not the infrastructure.',
+      icon: 'feat3',
+      body: 'Faster time to market. Build features not the infrastructure.',
     },
     {
       icon: 'feat8',
-      body: 'Performant transaction data queries',
+      body: 'No vendor lock. Diverse API providers. Open source code.',
     },
   ]
 
