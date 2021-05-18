@@ -28,7 +28,7 @@ export function Features() {
   const { user_theme } = GlobalContainer.useContainer()
 
   const featuresSub =
-    'ChainGraph is a network of GraphQL API nodes for blockchain applications that provides state of art subscription, filtering, sorting, aggregation, pagination and search capabilities.'
+    'ChainGraph is a network of GraphQL nodes for blockchain applications that provides state of art subscription, filtering, sorting, aggregation, pagination and search capabilities.'
   const features = [
     {
       icon: 'feat5',
