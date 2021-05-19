@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box } from 'rebass'
 import { Button } from './index'
+import { Trans } from 'gatsby-plugin-react-i18next'
 
 export const Modal = React.memo(({ children, show, modalClosed }) => (
   <React.Fragment>
@@ -48,7 +49,7 @@ export const Modal = React.memo(({ children, show, modalClosed }) => (
           cursor: 'pointer',
         }}
       >
-        Close
+        <Trans>Close</Trans>
       </Button.PrimaryBtn>
     </Box>
   </React.Fragment>

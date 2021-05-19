@@ -21,7 +21,7 @@ const HeaderComponent = styled(Flex)`
 const HeaderLogoContainer = styled(Box)`
   display: ${({ mobile }) => (mobile ? 'block' : 'none')};
 
-  @media screen and (min-width: ${themeGet('breakpoints.0')}) {
+  @media screen and (min-width: ${themeGet('breakpoints.1')}) {
     display: ${({ mobile }) => (!mobile ? 'block' : 'none')};
   }
 `
@@ -34,7 +34,7 @@ const HeaderMenuWrapper = styled(Flex)`
   cursor: pointer;
   color: ${({ userTheme }) => (userTheme === 'light' ? '#111' : '#fff')};
 
-  @media screen and (min-width: ${themeGet('breakpoints.0')}) {
+  @media screen and (min-width: ${themeGet('breakpoints.1')}) {
     display: none;
   }
 `
@@ -61,7 +61,7 @@ const HeaderLinkCircle = styled.div`
     }
   }
 
-  @media screen and (min-width: ${themeGet('breakpoints.0')}) {
+  @media screen and (min-width: ${themeGet('breakpoints.1')}) {
     display: ${({ mobile }) => (!mobile ? 'initial' : 'none')};
   }
 `
@@ -89,7 +89,7 @@ const MobileMenuWrapper = styled(motion.aside)`
     margin: 0;
   }
 
-  @media screen and (min-width: ${themeGet('breakpoints.0')}) {
+  @media screen and (min-width: ${themeGet('breakpoints.1')}) {
     display: none;
   }
 `

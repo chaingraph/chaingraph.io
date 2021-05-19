@@ -27,6 +27,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/locales`,
+        name: 'locale',
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -46,6 +53,22 @@ module.exports = {
         theme_color: '#151325',
         display: 'minimal-ui',
         icon: 'src/images/thumbnail.png', // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-i18next',
+      options: {
+        languages: ['en', 'es', 'cn'],
+        defaultLanguage: 'en',
+        siteUrl: 'https://chaingraph.io/',
+        i18nextOptions: {
+          defaultNS: 'common',
+          // debug: true,
+          lowerCaseLng: true,
+          saveMissing: false,
+          keySeparator: false,
+          nsSeparator: false,
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

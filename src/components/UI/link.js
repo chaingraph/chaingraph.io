@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import styled, { themeGet } from 'utils/styles'
 import { motion, useAnimation } from 'framer-motion'
-import { Link as GatsbyLink } from 'gatsby'
+import { Link as GatsbyLink } from 'gatsby-plugin-react-i18next'
 import { Text } from 'rebass'
 import { GlobalContainer } from 'store'
 
@@ -24,7 +24,7 @@ const LinkContainer = styled(GatsbyLink)`
     position: absolute;
     display: ${({ mobile }) => (mobile ? 'block' : 'none')};
 
-    @media screen and (min-width: ${themeGet('breakpoints.0')}) {
+    @media screen and (min-width: ${themeGet('breakpoints.1')}) {
       display: block;
     }
   }
@@ -49,7 +49,7 @@ const ExternalLink = styled.a`
     position: absolute;
     display: ${({ mobile }) => (mobile ? 'block' : 'none')};
 
-    @media screen and (min-width: ${themeGet('breakpoints.0')}) {
+    @media screen and (min-width: ${themeGet('breakpoints.1')}) {
       display: block;
     }
   }
@@ -58,7 +58,7 @@ const ExternalLink = styled.a`
 const LinkWrapper = styled(motion.div)`
   display: ${({ mobile }) => (mobile ? 'initial' : 'none')};
 
-  @media screen and (min-width: ${themeGet('breakpoints.0')}) {
+  @media screen and (min-width: ${themeGet('breakpoints.1')}) {
     display: ${({ mobile }) => (!mobile ? 'initial' : 'none')};
   }
 `

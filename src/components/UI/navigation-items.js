@@ -1,10 +1,13 @@
 import React from 'react'
 import { Flex } from 'rebass'
 import { GlobalContainer } from 'store'
-import { SvgIcon, Link, HeaderLogoContainer, HeaderLinkCircle } from './index'
+import { LangSelector } from './../LangSelector'
+import { SvgIcon, HeaderLogoContainer, HeaderLinkCircle, Link } from './index'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 export function NavigationItems({ mobile = false }) {
   const { user_theme } = GlobalContainer.useContainer()
+  const { t } = useTranslation()
 
   return (
     <React.Fragment>
@@ -29,11 +32,12 @@ export function NavigationItems({ mobile = false }) {
           </Link>
         </HeaderLogoContainer>
         <Link to="/#beta" header mobile={mobile} fontSize={4} ml={5}>
-          Beta
+          {t('Beta')}
         </Link>
         <Link to="/#features" header mobile={mobile} fontSize={4} ml={5}>
-          Features
+          {t('Features')}
         </Link>
+        <LangSelector isMobile={mobile} />
       </Flex>
       {user_theme ? (
         <HeaderLinkCircle mobile={mobile} userTheme={user_theme}>
@@ -47,7 +51,7 @@ export function NavigationItems({ mobile = false }) {
             fontSize={4}
             ml={5}
           >
-            Join Telegram
+            {t('Join Telegram')}
           </Link>
         </HeaderLinkCircle>
       ) : (

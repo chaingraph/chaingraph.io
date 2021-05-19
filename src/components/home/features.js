@@ -5,6 +5,7 @@ import { Flex, Text } from 'rebass'
 import { CardWrapper, CardContainer, Title, Grid, SvgIcon } from 'components/UI'
 import styled, { theme } from 'utils/styles'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const AnimWrapper = styled(motion.span)`
   width: 280px;
@@ -26,41 +27,44 @@ const Mask = styled(motion.div)`
 
 export function Features() {
   const { user_theme } = GlobalContainer.useContainer()
-
-  const featuresSub =
-    'ChainGraph is an open source decentralized network of GraphQL API nodes for blockchain applications that provides state of art subscription, filtering, sorting, aggregation, pagination and search capabilities.'
+  const { t } = useTranslation()
+  const featuresSub = t(
+    'ChainGraph is an open source decentralized network of GraphQL API nodes for blockchain applications that provides state of art subscription, filtering, sorting, aggregation, pagination and search capabilities.',
+  )
   const features = [
     {
       icon: 'feat1',
-      body: 'Read data from multiple blockchains.',
+      body: t('Read data from multiple blockchains.'),
     },
     {
       icon: 'feat2',
-      body: 'No vendor lock. Diverse API providers.',
+      body: t('Mobile first optimized queries.'),
     },
     {
       icon: 'feat3',
-      body: 'Mobile first optimized queries.',
+      body: t(
+        'Faster time to market. Focus on features not the infrastructure.',
+      ),
     },
     {
       icon: 'feat4',
-      body: 'Push through guarantees on RPC APIs.',
+      body: t('Semantic and principled graphql.'),
     },
     {
       icon: 'feat5',
-      body: 'Semantic and principled graphql.',
+      body: t('Performant transaction data queries.'),
     },
     {
       icon: 'feat6',
-      body: 'ChainGraph CLI and client app starters',
+      body: t('ChainGraph CLI and client app starters.'),
     },
     {
       icon: 'feat7',
-      body: 'Faster time to market. Focus on features not the infrastructure.',
+      body: t('Push through guarantees on RPC APIs.'),
     },
     {
       icon: 'feat8',
-      body: 'Performant transaction data queries',
+      body: t('No vendor lock. Diverse API providers.'),
     },
   ]
 
@@ -90,7 +94,7 @@ export function Features() {
       id="features"
     >
       <Title as="h1" fontSize={[5, 5, 5, 5, 6]} mb={[3, 4, 4, 4, 5]}>
-        Features
+        {t('Features')}
       </Title>
       <Text
         maxWidth={1200}
@@ -103,14 +107,19 @@ export function Features() {
       </Text>
       <Grid as="section">
         {features.map((f, i) => (
-          <AnimWrapper initial="hide" animate="hide" whileHover="show">
+          <AnimWrapper
+            initial="hide"
+            animate="hide"
+            whileHover="show"
+            key={`feature_${i + 1}`}
+          >
             <Mask variants={anim} transition={{ duration: 0.24 }} />
-            <CardWrapper key={`feature_${i + 1}`}>
+            <CardWrapper>
               <CardContainer as="figure" height="66%" width={10 / 12} mx="auto">
                 <SvgIcon icon={f.icon} logo />
               </CardContainer>
-              <CardContainer height="33%" width={10 / 12} mx="auto">
-                <Text as="p" textAlign="center" mx="auto" my="auto" width={1}>
+              <CardContainer height="33%" width="98%" mx="auto">
+                <Text as="p" textAlign="center" mx="auto" mb="auto" width={1}>
                   {f.body}
                 </Text>
               </CardContainer>
