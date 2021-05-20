@@ -1,4 +1,4 @@
-const breakpoints = ['640px', '832px', '1024px', '1200px', '1600px']
+const breakpoints = ['640px', '833px', '1024px', '1200px', '1600px']
 
 const colors = {
   main: {

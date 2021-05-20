@@ -5,6 +5,7 @@ import { Flex, Text } from 'rebass'
 import { CardWrapper, CardContainer, Title, Grid, SvgIcon } from 'components/UI'
 import styled, { theme } from 'utils/styles'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const AnimWrapper = styled(motion.span)`
   width: 280px;
@@ -26,41 +27,40 @@ const Mask = styled(motion.div)`
 
 export function Features() {
   const { user_theme } = GlobalContainer.useContainer()
-
-  const featuresSub =
-    'ChainGraph is a network of GraphQL nodes for blockchain applications that provides state of art subscription, filtering, sorting, aggregation, pagination and search capabilities.'
+  const { t } = useTranslation()
+  const featuresSub = t('featuresSub')
   const features = [
     {
       icon: 'feat5',
-      body: 'Subscriptions to real-time state and transaction data.',
+      body: t('feat5'),
     },
     {
       icon: 'feat1',
-      body: 'Query from multiple blockchains in one request.',
+      body: t('feat1'),
     },
     {
       icon: 'feat2',
-      body: 'Powerful developer console and explorer.',
+      body: t('feat2'),
     },
     {
       icon: 'feat7',
-      body: 'Push through guarantees on RPC APIs.',
+      body: t('feat7'),
     },
     {
       icon: 'feat4',
-      body: 'Semantic and principled graphql.',
+      body: t('feat4'),
     },
     {
       icon: 'feat6',
-      body: 'ChainGraph CLI, dApp starters and SDKs for developers.',
+      body: t('feat6'),
     },
     {
       icon: 'feat3',
-      body: 'Faster time to market. Build features not the infrastructure.',
+      body: t('feat3'),
     },
     {
       icon: 'feat8',
-      body: 'No vendor lock. Diverse API providers. Open source code.',
+      body: t('feat8'),
     },
   ]
 
@@ -90,7 +90,7 @@ export function Features() {
       id="features"
     >
       <Title as="h1" fontSize={[5, 5, 5, 5, 6]} mb={[3, 4, 4, 4, 5]}>
-        Features
+        {t('Features')}
       </Title>
       <Text
         maxWidth={1200}
@@ -103,14 +103,19 @@ export function Features() {
       </Text>
       <Grid as="section">
         {features.map((f, i) => (
-          <AnimWrapper initial="hide" animate="hide" whileHover="show">
+          <AnimWrapper
+            initial="hide"
+            animate="hide"
+            whileHover="show"
+            key={`feature_${i + 1}`}
+          >
             <Mask variants={anim} transition={{ duration: 0.24 }} />
-            <CardWrapper key={`feature_${i + 1}`}>
+            <CardWrapper>
               <CardContainer as="figure" height="66%" width={10 / 12} mx="auto">
                 <SvgIcon icon={f.icon} logo />
               </CardContainer>
               <CardContainer height="33%" width={10 / 12} mx="auto">
-                <Text as="p" textAlign="center" mx="auto" my="auto" width={1}>
+                <Text as="p" textAlign="center" mx="auto" mb="auto" width={1}>
                   {f.body}
                 </Text>
               </CardContainer>

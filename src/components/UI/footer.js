@@ -2,13 +2,12 @@ import React from 'react'
 import { Text, Flex, Box } from 'rebass'
 import { GlobalContainer } from 'store'
 import { SvgIcon, Icon, Button, ThemeBtnWrapper } from './index'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 export function Footer() {
-  const {
-    mobile,
-    user_theme,
-    setUserThemeHandler,
-  } = GlobalContainer.useContainer()
+  const { t } = useTranslation()
+  const { mobile, user_theme, setUserThemeHandler } =
+    GlobalContainer.useContainer()
 
   function changeThemeHandler() {
     if (user_theme === 'light') {
@@ -52,7 +51,7 @@ export function Footer() {
           />
         </Box>
         <Text as="span" fontWeight="300" fontSize={1} mx="auto" opacity={0.75}>
-          © {new Date().getFullYear()}, all rights reserved.
+          © {new Date().getFullYear()}, {t('allRights')}
         </Text>
       </Flex>
     </Box>

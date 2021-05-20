@@ -5,6 +5,7 @@ import styled, { themeGet } from 'utils/styles'
 import { getColors } from 'utils/utility'
 import { GlobalContainer } from 'store'
 import { Flex } from 'rebass'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const InputWrapper = styled(Flex)`
   position: relative;
@@ -12,6 +13,7 @@ const InputWrapper = styled(Flex)`
   input,
   textarea,
   select {
+    outline: none;
     width: 100%;
     padding: ${themeGet('space.3')} ${themeGet('space.4')};
     border-radius: 47px;
@@ -68,6 +70,10 @@ export function Input({
   elementConfig,
   disabled,
 }) {
+  const { t } = useTranslation()
+  const textError = t('inputError')
+  const textErrorB = t('correctly')
+  const errorLength = t('minLength')
   const { user_theme } = GlobalContainer.useContainer()
   let inputElement = null
   let errorHelperText = null
@@ -75,9 +81,9 @@ export function Input({
   if (invalid && touched) {
     errorHelperText = (
       <Error>
-        {`Please, input the ${label.toLowerCase()} correctly.${
+        {`${textError} ${label.toLowerCase()} ${textErrorB} ${
           shouldValidate.minLength
-            ? `Min Length: ${shouldValidate.minLength}`
+            ? `${errorLength} ${shouldValidate.minLength}`
             : ''
         }`}
       </Error>
