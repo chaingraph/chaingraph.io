@@ -9,8 +9,8 @@ function NotFoundPage() {
   return (
     <Layout>
       <SEO title="404: Not found" />
-      <h1>{t('NOT FOUND')}</h1>
-      <p>{t('You just hit a route that doesn&#39;t exist... the sadness.')}</p>
+      <h1>{t('notFound')}</h1>
+      <p>{t('notExist')}</p>
     </Layout>
   )
 }

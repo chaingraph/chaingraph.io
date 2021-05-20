@@ -28,43 +28,39 @@ const Mask = styled(motion.div)`
 export function Features() {
   const { user_theme } = GlobalContainer.useContainer()
   const { t } = useTranslation()
-  const featuresSub = t(
-    'ChainGraph is an open source decentralized network of GraphQL API nodes for blockchain applications that provides state of art subscription, filtering, sorting, aggregation, pagination and search capabilities.',
-  )
+  const featuresSub = t('featuresSub')
   const features = [
     {
+      icon: 'feat5',
+      body: t('feat5'),
+    },
+    {
       icon: 'feat1',
-      body: t('Read data from multiple blockchains.'),
+      body: t('feat1'),
     },
     {
       icon: 'feat2',
-      body: t('Mobile first optimized queries.'),
-    },
-    {
-      icon: 'feat3',
-      body: t(
-        'Faster time to market. Focus on features not the infrastructure.',
-      ),
-    },
-    {
-      icon: 'feat4',
-      body: t('Semantic and principled graphql.'),
-    },
-    {
-      icon: 'feat5',
-      body: t('Performant transaction data queries.'),
-    },
-    {
-      icon: 'feat6',
-      body: t('ChainGraph CLI and client app starters.'),
+      body: t('feat2'),
     },
     {
       icon: 'feat7',
-      body: t('Push through guarantees on RPC APIs.'),
+      body: t('feat7'),
+    },
+    {
+      icon: 'feat4',
+      body: t('feat4'),
+    },
+    {
+      icon: 'feat6',
+      body: t('feat6'),
+    },
+    {
+      icon: 'feat3',
+      body: t('feat3'),
     },
     {
       icon: 'feat8',
-      body: t('No vendor lock. Diverse API providers.'),
+      body: t('feat8'),
     },
   ]
 
@@ -118,7 +114,7 @@ export function Features() {
               <CardContainer as="figure" height="66%" width={10 / 12} mx="auto">
                 <SvgIcon icon={f.icon} logo />
               </CardContainer>
-              <CardContainer height="33%" width="98%" mx="auto">
+              <CardContainer height="33%" width={10 / 12} mx="auto">
                 <Text as="p" textAlign="center" mx="auto" mb="auto" width={1}>
                   {f.body}
                 </Text>

@@ -51,7 +51,7 @@ export function Footer() {
           />
         </Box>
         <Text as="span" fontWeight="300" fontSize={1} mx="auto" opacity={0.75}>
-          © {new Date().getFullYear()}, {t('all rights reserved.')}
+          © {new Date().getFullYear()}, {t('allRights')}
         </Text>
       </Flex>
     </Box>

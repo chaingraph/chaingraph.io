@@ -9,11 +9,9 @@ import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 export function Home() {
   const { t } = useTranslation()
-  const titleHero = t('one graph for all chains')
-  const heroSub = t(
-    'Blockchain real-time data without any hassle. ChainGraph provides reliable real-time graphql APIs for blockchain applications.',
-  )
-  const titleSubscribe = t('Get early access to the beta release.')
+  const titleHero = t('titleHero')
+  const heroSub = t('heroSub')
+  const titleSubscribe = t('titleSubscribe')
 
   return (
     <React.Fragment>

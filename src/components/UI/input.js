@@ -71,9 +71,9 @@ export function Input({
   disabled,
 }) {
   const { t } = useTranslation()
-  const textError = t('Please, input the ')
-  const textErrorB = t('correctly: ')
-  const errorLength = t('Min Length: ')
+  const textError = t('inputError')
+  const textErrorB = t('correctly')
+  const errorLength = t('minLength')
   const { user_theme } = GlobalContainer.useContainer()
   let inputElement = null
   let errorHelperText = null

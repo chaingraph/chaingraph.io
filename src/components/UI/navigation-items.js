@@ -51,7 +51,7 @@ export function NavigationItems({ mobile = false }) {
             fontSize={4}
             ml={5}
           >
-            {t('Join Telegram')}
+            {t('JoinTelegram')}
           </Link>
         </HeaderLinkCircle>
       ) : (
