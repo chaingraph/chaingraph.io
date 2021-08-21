@@ -43,7 +43,7 @@ export function NavigationItems({ mobile = false }) {
         <HeaderLinkCircle mobile={mobile} userTheme={user_theme}>
           <div className="circle" />
           <Link
-            to="https://t.me/chaingraph_io"
+            to="https://discord.gg/rhPvZPZ7JM"
             external
             target="__blank"
             header
@@ -51,7 +51,7 @@ export function NavigationItems({ mobile = false }) {
             fontSize={4}
             ml={5}
           >
-            {t('JoinTelegram')}
+            {t('JoinDiscord')}
           </Link>
         </HeaderLinkCircle>
       ) : (
