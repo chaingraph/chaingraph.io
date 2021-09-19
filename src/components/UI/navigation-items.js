@@ -37,6 +37,9 @@ export function NavigationItems({ mobile = false }) {
         <Link to="/#features" header mobile={mobile} fontSize={4} ml={5}>
           {t('Features')}
         </Link>
+        <Link to="/explorer" header mobile={mobile} fontSize={4} ml={5}>
+          {t('Explorer')}
+        </Link>
         <LangSelector isMobile={mobile} />
       </Flex>
       {user_theme ? (

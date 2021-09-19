@@ -3,12 +3,18 @@ import { graphql } from 'gatsby'
 import Layout from 'components/layout'
 import { SEO } from 'components/seo'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
-import { SubscriptionContainer } from 'store'
-import { subscribeState } from 'store/reducer/subscription-action'
 import GraphiQL from 'graphiql'
 import GraphiQLExplorer from 'graphiql-explorer'
 // import { buildClientSchema, getIntrospectionQuery, parse } from 'graphql'
 import { useSetState } from 'react-use'
+import 'graphiql/graphiql.css'
+import styled from 'utils/styles'
+
+const GraphiQLContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  border: 1px solid red;
+`
 
 function fetcher(params) {
   return fetch(
@@ -49,9 +55,8 @@ function IndexPage() {
   return (
     <Layout>
       <SEO title="Explorer" lang={t('lang')} />
-      <SubscriptionContainer.Provider initState={{ ...subscribeState }}>
-        <h1>Explorer</h1>
-
+      <h1>Explorer</h1>
+      <GraphiQLContainer>
         <GraphiQLExplorer
           schema={state.schema}
           query={state.query}
@@ -61,6 +66,26 @@ function IndexPage() {
           }
           explorerIsOpen={state.explorerIsOpen}
           onToggleExplorer={handleToggleExplorer}
+          colors={{
+            keyword: '#B11A04',
+            // OperationName, FragmentName
+            def: '#D2054E',
+            // FieldName
+            property: '#1F61A0',
+            // FieldAlias
+            qualifier: '#1C92A9',
+            // ArgumentName and ObjectFieldName
+            attribute: '#8B2BB9',
+            number: '#2882F9',
+            string: '#D64292',
+            // Boolean
+            builtin: '#D47509',
+            // Enum
+            string2: '#0B7FC7',
+            variable: '#397D13',
+            // Type
+            atom: '#CA9800',
+          }}
         />
         <GraphiQL
           ref={graphiqlRef}
@@ -87,7 +112,7 @@ function IndexPage() {
             />
           </GraphiQL.Toolbar>
         </GraphiQL>
-      </SubscriptionContainer.Provider>
+      </GraphiQLContainer>
     </Layout>
   )
 }
