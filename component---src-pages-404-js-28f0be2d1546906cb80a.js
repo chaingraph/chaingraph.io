@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{w2l6:function(t,n,o){"use strict";o.r(n);o("q1tI");var s=o("WlC/"),u=o("I/Ru"),e=o("vrFN"),c=o("qKvR");n.default=function(){const{t:t}=Object(s.useTranslation)();return Object(c.jsx)(u.a,null,Object(c.jsx)(e.a,{title:"404: Not found"}),Object(c.jsx)("h1",null,t("notFound")),Object(c.jsx)("p",null,t("notExist")))}}}]);
-//# sourceMappingURL=component---src-pages-404-js-28f0be2d1546906cb80a.js.map
